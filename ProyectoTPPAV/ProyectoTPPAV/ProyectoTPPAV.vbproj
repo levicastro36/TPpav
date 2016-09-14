@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{53695F3E-D09C-45A4-8A79-8F46FAF5B1DB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>ProyectoTPPAV.My.MyApplication</StartupObject>
+    <RootNamespace>ProyectoTPPAV</RootNamespace>
+    <AssemblyName>ProyectoTPPAV</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ProyectoTPPAV.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ProyectoTPPAV.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\..\..\..\Downloads\sqlite-netFx451-binary-x64-2013-1.0.102.0\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bussines Layer\Clases\Auto\Auto.vb" />
+    <Compile Include="Bussines Layer\Clases\Cuenta\Cuenta.vb" />
+    <Compile Include="Bussines Layer\Clases\Cuenta\DetalleCuenta.vb" />
+    <Compile Include="Bussines Layer\Clases\Direccion\Barrio.vb" />
+    <Compile Include="Bussines Layer\Clases\Personas\Cliente.vb" />
+    <Compile Include="Bussines Layer\Clases\OC\DetalleOrdenDeCompra.vb" />
+    <Compile Include="Bussines Layer\Clases\Pedido\DetallePedido.vb" />
+    <Compile Include="Bussines Layer\Clases\Direccion\Localidad.vb" />
+    <Compile Include="Bussines Layer\Clases\Producto\Marca.vb" />
+    <Compile Include="Bussines Layer\Clases\Auto\Modelo.vb" />
+    <Compile Include="Bussines Layer\Clases\OC\OrdenDeCompra.vb" />
+    <Compile Include="Bussines Layer\Clases\Pedido\Pedido.vb" />
+    <Compile Include="Bussines Layer\Clases\Producto\Producto.vb" />
+    <Compile Include="Bussines Layer\Clases\Personas\Proveedor.vb" />
+    <Compile Include="Bussines Layer\Clases\Direccion\Provincia.vb" />
+    <Compile Include="Bussines Layer\Clases\Producto\TipoProducto.vb" />
+    <Compile Include="Bussines Layer\Servicios\Auto\ServicioAuto.vb" />
+    <Compile Include="Bussines Layer\Servicios\Auto\ServicioModelo.vb" />
+    <Compile Include="Bussines Layer\Servicios\Cuenta\ServicioCuenta.vb" />
+    <Compile Include="Bussines Layer\Servicios\Cuenta\ServicioDetalleCuenta.vb" />
+    <Compile Include="Bussines Layer\Servicios\Direccion\ServicioBarrio.vb" />
+    <Compile Include="Bussines Layer\Servicios\Direccion\ServicioLocalidad.vb" />
+    <Compile Include="Bussines Layer\Servicios\Direccion\ServicioPronvia.vb" />
+    <Compile Include="Bussines Layer\Servicios\OC\ServicioDetalleOrdenCompra.vb" />
+    <Compile Include="Bussines Layer\Servicios\OC\ServicioOrdenCompra.vb" />
+    <Compile Include="Bussines Layer\Servicios\Pedido\ServicioDetallePedido.vb" />
+    <Compile Include="Bussines Layer\Servicios\Pedido\ServicioPedido.vb" />
+    <Compile Include="Bussines Layer\Servicios\Personas\ServicioCliente.vb" />
+    <Compile Include="Bussines Layer\Servicios\Personas\ServicioProveedor.vb" />
+    <Compile Include="Bussines Layer\Servicios\Producto\ServicioMarca.vb" />
+    <Compile Include="Bussines Layer\Servicios\Producto\ServicioProducto.vb" />
+    <Compile Include="Bussines Layer\Servicios\Producto\ServicioTipoProducto.vb" />
+    <Compile Include="DATALayer\DAOs\Auto\DAOauto.vb" />
+    <Compile Include="DATALayer\DAOs\Auto\DAOmodelo.vb" />
+    <Compile Include="DATALayer\DAOs\Cuenta\DAOcuenta.vb" />
+    <Compile Include="DATALayer\DAOs\Cuenta\DAOdetalleCuenta.vb" />
+    <Compile Include="DATALayer\DAOs\Direccion\DAObarrio.vb" />
+    <Compile Include="DATALayer\DAOs\Direccion\DAOlocalidad.vb" />
+    <Compile Include="DATALayer\DAOs\Direccion\DAOprovincia.vb" />
+    <Compile Include="DATALayer\DAOs\OC\DAOdetalleOrdenCompra.vb" />
+    <Compile Include="DATALayer\DAOs\OC\DAOordenCompra.vb" />
+    <Compile Include="DATALayer\DAOs\Pepido\DAOdetallePedido.vb" />
+    <Compile Include="DATALayer\DAOs\Pepido\DAOpedido.vb" />
+    <Compile Include="DATALayer\DAOs\Perdonas\DAOcliente.vb" />
+    <Compile Include="DATALayer\DAOs\Perdonas\DAOproveedor.vb" />
+    <Compile Include="DATALayer\DAOs\Producto\DAOmarca.vb" />
+    <Compile Include="DATALayer\DAOs\Producto\DAOproducto.vb" />
+    <Compile Include="DATALayer\DAOs\Producto\DAOtipoProducto.vb" />
+    <Compile Include="DATALayer\DBHelper\BDHelper.vb" />
+    <Compile Include="GUILayer\FrmAltaBarrio.Designer.vb">
+      <DependentUpon>FrmAltaBarrio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\FrmAltaBarrio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\FrmAltaLocalidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\FrmAltaLocalidad.Designer.vb">
+      <DependentUpon>FrmAltaLocalidad.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\FrmAltaProvincia.Designer.vb">
+      <DependentUpon>FrmAltaProvincia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\FrmAltaProvincia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\FrmAltaProveedor.Designer.vb">
+      <DependentUpon>FrmAltaProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\FrmAltaProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\FrmAltaProducto.Designer.vb">
+      <DependentUpon>FrmAltaProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\FrmAltaProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GUILayer\FrmAltaBarrio.resx">
+      <DependentUpon>FrmAltaBarrio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\FrmAltaProveedor.resx">
+      <DependentUpon>FrmAltaProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\FrmAltaProvincia.resx">
+      <DependentUpon>FrmAltaProvincia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\FrmAltaLocalidad.resx">
+      <DependentUpon>FrmAltaLocalidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\FrmAltaProducto.resx">
+      <DependentUpon>FrmAltaProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
