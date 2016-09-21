@@ -45,12 +45,13 @@ Partial Class FrmAltaProveedor
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.btnEditar = New System.Windows.Forms.Button()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.txtRazonSocial = New System.Windows.Forms.TextBox()
         Me.txtCUIT = New System.Windows.Forms.TextBox()
         Me.lblRazonSocial = New System.Windows.Forms.Label()
         Me.lblCUIT = New System.Windows.Forms.Label()
+        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -291,16 +292,16 @@ Partial Class FrmAltaProveedor
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = False
         '
-        'btnGuardar
+        'btnEditar
         '
-        Me.btnGuardar.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.btnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.Location = New System.Drawing.Point(334, 59)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(84, 31)
-        Me.btnGuardar.TabIndex = 45
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = False
+        Me.btnEditar.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.btnEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditar.Location = New System.Drawing.Point(334, 59)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(84, 31)
+        Me.btnEditar.TabIndex = 45
+        Me.btnEditar.Text = "Editar"
+        Me.btnEditar.UseVisualStyleBackColor = False
         '
         'btnNuevo
         '
@@ -346,16 +347,27 @@ Partial Class FrmAltaProveedor
         Me.lblCUIT.TabIndex = 41
         Me.lblCUIT.Text = "C.U.I.T.:"
         '
+        'btnGuardar
+        '
+        Me.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnGuardar.Location = New System.Drawing.Point(126, 419)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(84, 36)
+        Me.btnGuardar.TabIndex = 51
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = True
+        '
         'FrmAltaProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(463, 469)
+        Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnBuscar)
-        Me.Controls.Add(Me.btnGuardar)
+        Me.Controls.Add(Me.btnEditar)
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.txtRazonSocial)
         Me.Controls.Add(Me.txtCUIT)
@@ -394,7 +406,7 @@ Partial Class FrmAltaProveedor
     Friend WithEvents Label2 As Label
     Friend WithEvents btnSalir As Button
     Friend WithEvents btnBuscar As Button
-    Friend WithEvents btnGuardar As Button
+    Friend WithEvents btnEditar As Button
     Friend WithEvents btnNuevo As Button
     Friend WithEvents txtRazonSocial As TextBox
     Friend WithEvents txtCUIT As TextBox
@@ -402,4 +414,5 @@ Partial Class FrmAltaProveedor
     Friend WithEvents lblCUIT As Label
     Friend WithEvents txtPiso As TextBox
     Friend WithEvents lblPiso As Label
+    Friend WithEvents btnGuardar As Button
 End Class
