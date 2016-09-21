@@ -25,7 +25,7 @@
         combo.DataSource = datos
         combo.ValueMember = pk
         combo.DisplayMember = desc
-
+        combo.SelectedIndex = -1
     End Sub
 
     Private Sub cmbProvincia_Click(sender As Object, e As EventArgs) Handles cmbProvincia.Click
