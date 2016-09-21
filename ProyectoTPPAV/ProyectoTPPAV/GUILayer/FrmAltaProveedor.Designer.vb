@@ -23,6 +23,8 @@ Partial Class FrmAltaProveedor
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtPiso = New System.Windows.Forms.TextBox()
+        Me.lblPiso = New System.Windows.Forms.Label()
         Me.btnNuevoBarrio = New System.Windows.Forms.Button()
         Me.btnNuevaLocalidad = New System.Windows.Forms.Button()
         Me.btnNuevaProvincia = New System.Windows.Forms.Button()
@@ -49,8 +51,6 @@ Partial Class FrmAltaProveedor
         Me.txtCUIT = New System.Windows.Forms.TextBox()
         Me.lblRazonSocial = New System.Windows.Forms.Label()
         Me.lblCUIT = New System.Windows.Forms.Label()
-        Me.txtPiso = New System.Windows.Forms.TextBox()
-        Me.lblPiso = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -78,6 +78,23 @@ Partial Class FrmAltaProveedor
         Me.GroupBox2.TabIndex = 50
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Domicilio"
+        '
+        'txtPiso
+        '
+        Me.txtPiso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPiso.Location = New System.Drawing.Point(292, 45)
+        Me.txtPiso.Name = "txtPiso"
+        Me.txtPiso.Size = New System.Drawing.Size(59, 20)
+        Me.txtPiso.TabIndex = 52
+        '
+        'lblPiso
+        '
+        Me.lblPiso.AutoSize = True
+        Me.lblPiso.Location = New System.Drawing.Point(211, 52)
+        Me.lblPiso.Name = "lblPiso"
+        Me.lblPiso.Size = New System.Drawing.Size(30, 13)
+        Me.lblPiso.TabIndex = 51
+        Me.lblPiso.Text = "Piso:"
         '
         'btnNuevoBarrio
         '
@@ -329,23 +346,6 @@ Partial Class FrmAltaProveedor
         Me.lblCUIT.TabIndex = 41
         Me.lblCUIT.Text = "C.U.I.T.:"
         '
-        'txtPiso
-        '
-        Me.txtPiso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtPiso.Location = New System.Drawing.Point(292, 45)
-        Me.txtPiso.Name = "txtPiso"
-        Me.txtPiso.Size = New System.Drawing.Size(59, 20)
-        Me.txtPiso.TabIndex = 52
-        '
-        'lblPiso
-        '
-        Me.lblPiso.AutoSize = True
-        Me.lblPiso.Location = New System.Drawing.Point(211, 52)
-        Me.lblPiso.Name = "lblPiso"
-        Me.lblPiso.Size = New System.Drawing.Size(30, 13)
-        Me.lblPiso.TabIndex = 51
-        Me.lblPiso.Text = "Piso:"
-        '
         'FrmAltaProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -362,6 +362,7 @@ Partial Class FrmAltaProveedor
         Me.Controls.Add(Me.lblRazonSocial)
         Me.Controls.Add(Me.lblCUIT)
         Me.Name = "FrmAltaProveedor"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Alta Proveedor"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
