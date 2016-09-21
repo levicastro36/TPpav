@@ -3,6 +3,11 @@
     Private sLocalidad As New ServicioLocalidad
     Private sBarrio As New ServicioBarrio
     Private Sub FrmAltaProveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        cmbProvincia.DataSource = Nothing
+        cmbLocalidad.DataSource = Nothing
+        cmbBarrio.DataSource = Nothing
+
         cmbProvincia.Items.Clear()
         cmbLocalidad.Items.Clear()
         cmbBarrio.Items.Clear()
@@ -65,7 +70,13 @@
         Me.txtNro.Text = Nothing
         Me.txtCalle.Text = Nothing
         Me.txtPiso.Text = Nothing
+        Me.cmbProvincia.DataSource = Nothing
+        Me.cmbLocalidad.DataSource = Nothing
+        Me.cmbBarrio.DataSource = Nothing
 
+        Me.cmbProvincia.Items.Clear()
+        Me.cmbLocalidad.Items.Clear()
+        Me.cmbBarrio.Items.Clear()
     End Sub
     Private Function validarCampos() As Boolean
         Return True
