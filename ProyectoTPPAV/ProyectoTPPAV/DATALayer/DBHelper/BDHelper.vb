@@ -10,7 +10,7 @@ Public Class BDHelper
     Private Shared instance As BDHelper 'Unica instancia de la clase
 
     Private Sub New()
-        string_conexion = "Data Source=maquis;Initial Catalog=ejemplo_40670;Persist Security Info=True;User ID=avisuales1; password=avisuales1"
+        string_conexion = "Data Source=EUROCOOL;Initial Catalog=prueba2;Integrated Security=True"
         'string_conexion = "Data Source=basedato.db"
     End Sub
 
@@ -23,6 +23,7 @@ Public Class BDHelper
 
     Public Function EjecutarSQL(ByVal strSql As String) As Integer
         ' Se utiliza para sentencias SQL del tipo “Insert/Update/Delete”
+        Dim number As Integer = 0
         Dim conexion As New SqlConnection
         Dim cmd As New SqlCommand
         'Dim conexion As New SQLiteConnection
@@ -44,9 +45,10 @@ Public Class BDHelper
             ' Establece la instrucción a ejecutar
             cmd.CommandText = strSql
             ' Retorna el resultado de ejecutar el comando
-            Return cmd.ExecuteNonQuery()
+            number = cmd.ExecuteNonQuery()
+            Return number
         Catch ex As Exception
-            Throw ex
+            MsgBox(ex.ToString)
         Finally
             ' Cierra la conexión
             conexion.Close()

@@ -1,3 +1,7 @@
 ﻿Public Class ServicioBarrio
-    Private oBarrioDAO As New DAObarrio
+    Private oDAObarrio As New DAObarrio
+
+    Friend Function listarBarrios(ByVal codLocalidad As Int16) As DataTable
+        Return oDAObarrio.getLocalidades(codLocalidad)
+    End Function
 End Class

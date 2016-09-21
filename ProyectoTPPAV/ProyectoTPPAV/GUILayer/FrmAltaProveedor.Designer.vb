@@ -49,12 +49,16 @@ Partial Class FrmAltaProveedor
         Me.txtCUIT = New System.Windows.Forms.TextBox()
         Me.lblRazonSocial = New System.Windows.Forms.Label()
         Me.lblCUIT = New System.Windows.Forms.Label()
+        Me.txtPiso = New System.Windows.Forms.TextBox()
+        Me.lblPiso = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.txtPiso)
+        Me.GroupBox2.Controls.Add(Me.lblPiso)
         Me.GroupBox2.Controls.Add(Me.btnNuevoBarrio)
         Me.GroupBox2.Controls.Add(Me.btnNuevaLocalidad)
         Me.GroupBox2.Controls.Add(Me.btnNuevaProvincia)
@@ -325,6 +329,23 @@ Partial Class FrmAltaProveedor
         Me.lblCUIT.TabIndex = 41
         Me.lblCUIT.Text = "C.U.I.T.:"
         '
+        'txtPiso
+        '
+        Me.txtPiso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPiso.Location = New System.Drawing.Point(292, 45)
+        Me.txtPiso.Name = "txtPiso"
+        Me.txtPiso.Size = New System.Drawing.Size(59, 20)
+        Me.txtPiso.TabIndex = 52
+        '
+        'lblPiso
+        '
+        Me.lblPiso.AutoSize = True
+        Me.lblPiso.Location = New System.Drawing.Point(211, 52)
+        Me.lblPiso.Name = "lblPiso"
+        Me.lblPiso.Size = New System.Drawing.Size(30, 13)
+        Me.lblPiso.TabIndex = 51
+        Me.lblPiso.Text = "Piso:"
+        '
         'FrmAltaProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -378,4 +399,6 @@ Partial Class FrmAltaProveedor
     Friend WithEvents txtCUIT As TextBox
     Friend WithEvents lblRazonSocial As Label
     Friend WithEvents lblCUIT As Label
+    Friend WithEvents txtPiso As TextBox
+    Friend WithEvents lblPiso As Label
 End Class
