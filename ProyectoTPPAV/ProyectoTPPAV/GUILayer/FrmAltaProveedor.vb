@@ -12,14 +12,7 @@
         cmbLocalidad.Items.Clear()
         cmbBarrio.Items.Clear()
 
-        Me.txtResponsable.Enabled = False
-        Me.txtTelefono.Enabled = False
-        Me.txtNro.Enabled = False
-        Me.txtCalle.Enabled = False
-        Me.txtPiso.Enabled = False
-        Me.cmbProvincia.Enabled = False
-        Me.cmbLocalidad.Enabled = False
-        Me.cmbBarrio.Enabled = False
+
     End Sub
 
     Friend Sub consultarProveedor()
@@ -102,5 +95,21 @@
                 MsgBox("No se pudo cargar")
             End If
         End If
+    End Sub
+
+    Private Sub btnNuevaProvincia_Click(sender As Object, e As EventArgs) Handles btnNuevaProvincia.Click
+        FrmAltaProvincia.Show()
+    End Sub
+
+    Private Sub btnNuevaLocalidad_Click(sender As Object, e As EventArgs) Handles btnNuevaLocalidad.Click
+        FrmAltaLocalidad.Show()
+    End Sub
+
+    Private Sub btnNuevoBarrio_Click(sender As Object, e As EventArgs) Handles btnNuevoBarrio.Click
+        FrmAltaBarrio.Show()
+    End Sub
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
     End Sub
 End Class
