@@ -48,6 +48,7 @@ Public Class BDHelper
             number = cmd.ExecuteNonQuery()
             Return number
         Catch ex As Exception
+            'Throw ex
             MsgBox(ex.ToString)
         Finally
             ' Cierra la conexión
@@ -73,7 +74,8 @@ Public Class BDHelper
             ' La función retorna el objeto datatable con 0, 1 o mas registros
             Return tabla
         Catch ex As Exception
-            Throw ex
+            'Throw ex
+            MsgBox(ex.ToString)
         Finally
             conexion.Close()
             conexion.Dispose()
