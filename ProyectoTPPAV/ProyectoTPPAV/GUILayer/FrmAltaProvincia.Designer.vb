@@ -36,7 +36,7 @@ Partial Class FrmAltaProvincia
         Me.btnSalir.Location = New System.Drawing.Point(211, 100)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(84, 36)
-        Me.btnSalir.TabIndex = 43
+        Me.btnSalir.TabIndex = 44
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = True
         '
@@ -46,7 +46,7 @@ Partial Class FrmAltaProvincia
         Me.btnNuevo.Location = New System.Drawing.Point(121, 100)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(84, 36)
-        Me.btnNuevo.TabIndex = 42
+        Me.btnNuevo.TabIndex = 43
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
         '
@@ -73,7 +73,7 @@ Partial Class FrmAltaProvincia
         Me.txtDescripcion.Location = New System.Drawing.Point(89, 54)
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(182, 20)
-        Me.txtDescripcion.TabIndex = 45
+        Me.txtDescripcion.TabIndex = 42
         '
         'Label1
         '

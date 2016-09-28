@@ -40,7 +40,7 @@ Partial Class FrmAltaLocalidad
         Me.btnNuevaProvincia.Location = New System.Drawing.Point(319, 115)
         Me.btnNuevaProvincia.Name = "btnNuevaProvincia"
         Me.btnNuevaProvincia.Size = New System.Drawing.Size(28, 23)
-        Me.btnNuevaProvincia.TabIndex = 58
+        Me.btnNuevaProvincia.TabIndex = 56
         Me.btnNuevaProvincia.Text = "..."
         Me.btnNuevaProvincia.UseVisualStyleBackColor = False
         '
@@ -53,7 +53,7 @@ Partial Class FrmAltaLocalidad
         Me.cmbProvincia.Location = New System.Drawing.Point(119, 115)
         Me.cmbProvincia.Name = "cmbProvincia"
         Me.cmbProvincia.Size = New System.Drawing.Size(182, 21)
-        Me.cmbProvincia.TabIndex = 57
+        Me.cmbProvincia.TabIndex = 55
         '
         'Label6
         '
@@ -70,7 +70,7 @@ Partial Class FrmAltaLocalidad
         Me.btnSalir.Location = New System.Drawing.Point(291, 189)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(84, 36)
-        Me.btnSalir.TabIndex = 55
+        Me.btnSalir.TabIndex = 58
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = True
         '
@@ -80,7 +80,7 @@ Partial Class FrmAltaLocalidad
         Me.btnNuevo.Location = New System.Drawing.Point(183, 189)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(84, 36)
-        Me.btnNuevo.TabIndex = 54
+        Me.btnNuevo.TabIndex = 57
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
         '
@@ -107,7 +107,7 @@ Partial Class FrmAltaLocalidad
         Me.txtDescripcion.Location = New System.Drawing.Point(119, 78)
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(182, 20)
-        Me.txtDescripcion.TabIndex = 60
+        Me.txtDescripcion.TabIndex = 54
         '
         'Label1
         '

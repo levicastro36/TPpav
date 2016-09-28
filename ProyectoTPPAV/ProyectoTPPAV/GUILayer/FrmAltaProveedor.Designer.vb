@@ -86,7 +86,7 @@ Partial Class FrmAltaProveedor
         Me.txtPiso.Location = New System.Drawing.Point(292, 45)
         Me.txtPiso.Name = "txtPiso"
         Me.txtPiso.Size = New System.Drawing.Size(59, 20)
-        Me.txtPiso.TabIndex = 52
+        Me.txtPiso.TabIndex = 49
         '
         'lblPiso
         '
@@ -104,7 +104,7 @@ Partial Class FrmAltaProveedor
         Me.btnNuevoBarrio.Location = New System.Drawing.Point(372, 132)
         Me.btnNuevoBarrio.Name = "btnNuevoBarrio"
         Me.btnNuevoBarrio.Size = New System.Drawing.Size(28, 23)
-        Me.btnNuevoBarrio.TabIndex = 50
+        Me.btnNuevoBarrio.TabIndex = 55
         Me.btnNuevoBarrio.Text = "..."
         Me.btnNuevoBarrio.UseVisualStyleBackColor = False
         '
@@ -115,7 +115,7 @@ Partial Class FrmAltaProveedor
         Me.btnNuevaLocalidad.Location = New System.Drawing.Point(372, 99)
         Me.btnNuevaLocalidad.Name = "btnNuevaLocalidad"
         Me.btnNuevaLocalidad.Size = New System.Drawing.Size(28, 23)
-        Me.btnNuevaLocalidad.TabIndex = 49
+        Me.btnNuevaLocalidad.TabIndex = 53
         Me.btnNuevaLocalidad.Text = "..."
         Me.btnNuevaLocalidad.UseVisualStyleBackColor = False
         '
@@ -126,7 +126,7 @@ Partial Class FrmAltaProveedor
         Me.btnNuevaProvincia.Location = New System.Drawing.Point(372, 70)
         Me.btnNuevaProvincia.Name = "btnNuevaProvincia"
         Me.btnNuevaProvincia.Size = New System.Drawing.Size(28, 23)
-        Me.btnNuevaProvincia.TabIndex = 48
+        Me.btnNuevaProvincia.TabIndex = 51
         Me.btnNuevaProvincia.Text = "..."
         Me.btnNuevaProvincia.UseVisualStyleBackColor = False
         '
@@ -139,7 +139,7 @@ Partial Class FrmAltaProveedor
         Me.cmbBarrio.Location = New System.Drawing.Point(93, 135)
         Me.cmbBarrio.Name = "cmbBarrio"
         Me.cmbBarrio.Size = New System.Drawing.Size(261, 21)
-        Me.cmbBarrio.TabIndex = 47
+        Me.cmbBarrio.TabIndex = 54
         '
         'Label7
         '
@@ -159,7 +159,7 @@ Partial Class FrmAltaProveedor
         Me.cmbLocalidad.Location = New System.Drawing.Point(93, 104)
         Me.cmbLocalidad.Name = "cmbLocalidad"
         Me.cmbLocalidad.Size = New System.Drawing.Size(261, 21)
-        Me.cmbLocalidad.TabIndex = 45
+        Me.cmbLocalidad.TabIndex = 52
         '
         'Label5
         '
@@ -179,7 +179,7 @@ Partial Class FrmAltaProveedor
         Me.cmbProvincia.Location = New System.Drawing.Point(93, 71)
         Me.cmbProvincia.Name = "cmbProvincia"
         Me.cmbProvincia.Size = New System.Drawing.Size(261, 21)
-        Me.cmbProvincia.TabIndex = 43
+        Me.cmbProvincia.TabIndex = 50
         '
         'Label6
         '
@@ -196,7 +196,7 @@ Partial Class FrmAltaProveedor
         Me.txtNro.Location = New System.Drawing.Point(93, 45)
         Me.txtNro.Name = "txtNro"
         Me.txtNro.Size = New System.Drawing.Size(59, 20)
-        Me.txtNro.TabIndex = 41
+        Me.txtNro.TabIndex = 48
         '
         'Label4
         '
@@ -213,7 +213,7 @@ Partial Class FrmAltaProveedor
         Me.txtCalle.Location = New System.Drawing.Point(93, 19)
         Me.txtCalle.Name = "txtCalle"
         Me.txtCalle.Size = New System.Drawing.Size(307, 20)
-        Me.txtCalle.TabIndex = 39
+        Me.txtCalle.TabIndex = 47
         '
         'Label1
         '
@@ -243,7 +243,7 @@ Partial Class FrmAltaProveedor
         Me.txtTelefono.Location = New System.Drawing.Point(93, 45)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(307, 20)
-        Me.txtTelefono.TabIndex = 20
+        Me.txtTelefono.TabIndex = 46
         '
         'Label3
         '
@@ -260,7 +260,7 @@ Partial Class FrmAltaProveedor
         Me.txtResponsable.Location = New System.Drawing.Point(93, 19)
         Me.txtResponsable.Name = "txtResponsable"
         Me.txtResponsable.Size = New System.Drawing.Size(307, 20)
-        Me.txtResponsable.TabIndex = 18
+        Me.txtResponsable.TabIndex = 45
         '
         'Label2
         '
@@ -277,7 +277,7 @@ Partial Class FrmAltaProveedor
         Me.btnSalir.Location = New System.Drawing.Point(351, 419)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(84, 36)
-        Me.btnSalir.TabIndex = 48
+        Me.btnSalir.TabIndex = 58
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = True
         '
@@ -288,7 +288,7 @@ Partial Class FrmAltaProveedor
         Me.btnBuscar.Location = New System.Drawing.Point(334, 19)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(84, 30)
-        Me.btnBuscar.TabIndex = 46
+        Me.btnBuscar.TabIndex = 45
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = False
         '
@@ -299,7 +299,7 @@ Partial Class FrmAltaProveedor
         Me.btnEditar.Location = New System.Drawing.Point(334, 59)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(84, 31)
-        Me.btnEditar.TabIndex = 45
+        Me.btnEditar.TabIndex = 46
         Me.btnEditar.Text = "Editar"
         Me.btnEditar.UseVisualStyleBackColor = False
         '
@@ -309,7 +309,7 @@ Partial Class FrmAltaProveedor
         Me.btnNuevo.Location = New System.Drawing.Point(243, 419)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(84, 36)
-        Me.btnNuevo.TabIndex = 47
+        Me.btnNuevo.TabIndex = 57
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = True
         '
@@ -353,7 +353,7 @@ Partial Class FrmAltaProveedor
         Me.btnGuardar.Location = New System.Drawing.Point(126, 419)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(84, 36)
-        Me.btnGuardar.TabIndex = 51
+        Me.btnGuardar.TabIndex = 56
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
