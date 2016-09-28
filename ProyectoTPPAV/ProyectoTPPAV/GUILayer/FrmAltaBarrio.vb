@@ -8,16 +8,16 @@
         cmbLocalidad.Items.Clear()
     End Sub
 
-    Private Sub CargarCombo(ByRef combo As ComboBox, ByRef datos As Data.DataTable, ByVal pk As String, ByVal desc As String)
+    Private Sub CargarCombo(ByRef combo As ComboBox, ByRef datos As Data.DataTable, ByVal pk As String, ByVal nombre As String)
 
         combo.DataSource = datos
         combo.ValueMember = pk
-        combo.DisplayMember = desc
+        combo.DisplayMember = nombre
         combo.SelectedIndex = -1
     End Sub
 
     Private Sub cmbLocalidad_Click(sender As Object, e As EventArgs) Handles cmbLocalidad.Click
-        CargarCombo(cmbLocalidad, sLocalidad.listarLocalidadSinParam(), "codLocalidad", "descripcion")
+        CargarCombo(cmbLocalidad, sLocalidad.listarLocalidadSinParam(), "codLocalidad", "nombre")
     End Sub
 
     Private Sub btnNuevaLocalidad_Click(sender As Object, e As EventArgs) Handles btnNuevaLocalidad.Click

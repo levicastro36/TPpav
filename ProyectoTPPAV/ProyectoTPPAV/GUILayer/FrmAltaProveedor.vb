@@ -19,30 +19,30 @@
         Me.ShowDialog()
     End Sub
 
-    Private Sub CargarCombo(ByRef combo As ComboBox, ByRef datos As Data.DataTable, ByVal pk As String, ByVal desc As String)
+    Private Sub CargarCombo(ByRef combo As ComboBox, ByRef datos As Data.DataTable, ByVal pk As String, ByVal nombre As String)
         combo.DataSource = datos
         combo.ValueMember = pk
-        combo.DisplayMember = desc
+        combo.DisplayMember = nombre
         combo.SelectedIndex = -1
     End Sub
 
     Private Sub cmbProvincia_Click(sender As Object, e As EventArgs) Handles cmbProvincia.Click
-        CargarCombo(cmbProvincia, sProvincia.listarProvincias(), "codProvincia", "descripcion")
+        CargarCombo(cmbProvincia, sProvincia.listarProvincias(), "codProvincia", "nombre")
     End Sub
 
     Private Sub cmbLocalidad_Click(sender As Object, e As EventArgs) Handles cmbLocalidad.Click
         If (Not (cmbProvincia.SelectedValue = Nothing)) Then
-            CargarCombo(cmbLocalidad, sLocalidad.listarLocalidades(cmbProvincia.SelectedValue.ToString), "codLocalidad", "descripcion")
+            CargarCombo(cmbLocalidad, sLocalidad.listarLocalidades(cmbProvincia.SelectedValue.ToString), "codLocalidad", "nombre")
         Else
-            MsgBox("cargue provincia")
+            MsgBox("Cargue provincia")
         End If
     End Sub
 
     Private Sub cmbBarrio_Click(sender As Object, e As EventArgs) Handles cmbBarrio.Click
         If (Not (cmbLocalidad.SelectedValue = Nothing)) Then
-            CargarCombo(cmbBarrio, sBarrio.listarBarrios(cmbLocalidad.SelectedValue.ToString), "codBarrio", "descripcion")
+            CargarCombo(cmbBarrio, sBarrio.listarBarrios(cmbLocalidad.SelectedValue.ToString), "codBarrio", "nombre")
         Else
-            MsgBox("cargue localidad")
+            MsgBox("Cargue localidad")
         End If
     End Sub
 

@@ -10,7 +10,7 @@ Public Class BDHelper
     Private Shared instance As BDHelper 'Unica instancia de la clase
 
     Private Sub New()
-        string_conexion = "Data Source=user-PC;Initial Catalog=Automotor;Integrated Security=True"
+        string_conexion = "Data Source=user-PC;Initial Catalog=BDAutomotor;Integrated Security=True"
         'string_conexion = "Data Source=basedato.db"
     End Sub
 

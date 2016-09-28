@@ -91,7 +91,7 @@ Partial Class FrmAltaProveedor
         'lblPiso
         '
         Me.lblPiso.AutoSize = True
-        Me.lblPiso.Location = New System.Drawing.Point(211, 52)
+        Me.lblPiso.Location = New System.Drawing.Point(222, 52)
         Me.lblPiso.Name = "lblPiso"
         Me.lblPiso.Size = New System.Drawing.Size(30, 13)
         Me.lblPiso.TabIndex = 51
