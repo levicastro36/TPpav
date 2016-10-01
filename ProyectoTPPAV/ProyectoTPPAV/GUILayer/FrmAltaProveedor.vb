@@ -12,6 +12,11 @@
         cmbLocalidad.Items.Clear()
         cmbBarrio.Items.Clear()
 
+        btnEditar.Enabled = False
+        btnEditar.Visible = False
+        btnGuardar.Enabled = False
+        btnGuardar.Visible = False
+
 
     End Sub
 
@@ -55,6 +60,9 @@
         Me.cmbProvincia.Enabled = True
         Me.cmbLocalidad.Enabled = True
         Me.cmbBarrio.Enabled = True
+
+        btnGuardar.Enabled = True
+        btnGuardar.Visible = True
 
         Me.txtCUIT.Text = Nothing
         Me.txtRazonSocial.Text = Nothing
@@ -111,5 +119,41 @@
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Close()
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        Me.txtResponsable.Enabled = False
+        Me.txtTelefono.Enabled = False
+        Me.txtNro.Enabled = False
+        Me.txtCalle.Enabled = False
+        Me.txtPiso.Enabled = False
+        Me.cmbProvincia.Enabled = False
+        Me.cmbLocalidad.Enabled = False
+        Me.cmbBarrio.Enabled = False
+
+        btnEditar.Enabled = True
+        btnEditar.Visible = True
+        btnGuardar.Enabled = False
+        btnGuardar.Visible = False
+
+        Me.txtCUIT.Text = Nothing
+        Me.txtRazonSocial.Text = Nothing
+        Me.txtResponsable.Text = Nothing
+        Me.txtTelefono.Text = Nothing
+        Me.txtNro.Text = Nothing
+        Me.txtCalle.Text = Nothing
+        Me.txtPiso.Text = Nothing
+        Me.cmbProvincia.DataSource = Nothing
+        Me.cmbLocalidad.DataSource = Nothing
+        Me.cmbBarrio.DataSource = Nothing
+
+        Me.cmbProvincia.Items.Clear()
+        Me.cmbLocalidad.Items.Clear()
+        Me.cmbBarrio.Items.Clear()
+    End Sub
+
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        btnGuardar.Enabled = True
+        btnGuardar.Visible = True
     End Sub
 End Class

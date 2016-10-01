@@ -3,6 +3,8 @@
     Private sProvincia As New ServicioPronvia
     Private sLocalidad As New ServicioLocalidad
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtNombreLocalidad.Text = Nothing
+        txtDescripcion.Text = Nothing
         cmbProvincia.DataSource = Nothing
         cmbProvincia.Items.Clear()
     End Sub
@@ -14,22 +16,28 @@
         combo.SelectedIndex = -1
     End Sub
     Private Sub cmbProvincia_Click(sender As Object, e As EventArgs) Handles cmbProvincia.Click
-        CargarCombo(cmbProvincia, sProvincia.listarProvincias(), "codProvincia", "Nombre")
+        CargarCombo(cmbProvincia, sProvincia.listarProvincias(), "codProvincia", "nombre")
     End Sub
 
     Private Sub btnNuevaProvincia_Click(sender As Object, e As EventArgs) Handles btnNuevaProvincia.Click
-        FrmAltaProvincia.Show()
+        FrmAltaProvincia.ShowDialog()
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
-        Me.Close()
+        If MsgBox("Esta seguro que desea salir", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            Me.Close()
+        End If
     End Sub
 
-    Private Function validarCampos() As Boolean
-        Return True
+    Private Function validarCampos(ByVal txt_box As TextBox) As Boolean
+        Dim rtn As Boolean = False
+        If (Not (txt_box.Text = String.Empty)) Then
+            rtn = True
+        End If
+        Return rtn
     End Function
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        If validarCampos() Then
+        If (validarCampos(txtNombreLocalidad) & (cmbProvincia.SelectedValue.ToString > -1)) Then
             Dim oLocalidad As New Localidad
             oLocalidad.nombre = txtNombreLocalidad.Text
             oLocalidad.descripcion = txtDescripcion.Text

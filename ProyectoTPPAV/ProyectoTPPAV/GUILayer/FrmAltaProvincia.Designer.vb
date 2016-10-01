@@ -96,6 +96,7 @@ Partial Class FrmAltaProvincia
         Me.Controls.Add(Me.txtNombreProvincia)
         Me.Controls.Add(Me.lblNombre)
         Me.Name = "FrmAltaProvincia"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Alta Provincia"
         Me.ResumeLayout(False)
         Me.PerformLayout()
