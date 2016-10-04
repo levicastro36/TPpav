@@ -20,12 +20,12 @@
             oprovincia.descripcion = txtDescripcion.Text
 
             If sProvincia.nuevaProvincia(oprovincia) Then
-                MsgBox("Carga Exitosa")
+                MsgBox("Carga Exitosa", MsgBoxStyle.Information)
             Else
                 MsgBox("No se pudo cargar")
             End If
         Else
-            MsgBox("Nombre de Provincia vacio")
+            MsgBox("Nombre de Provincia vacio", MsgBoxStyle.Information)
         End If
     End Sub
 

@@ -8,6 +8,7 @@
 
     Private Sub FrmAltaProveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
         cmbProvincia.DataSource = Nothing
         cmbLocalidad.DataSource = Nothing
         cmbBarrio.DataSource = Nothing
@@ -18,8 +19,8 @@
 
         btnEditar.Enabled = False
         btnEditar.Visible = False
-        btnGuardar.Enabled = False
-        btnGuardar.Visible = False
+        btnGuardar.Enabled = True
+        btnGuardar.Visible = True
 
         txtCUIT.MaxLength = 11 'seteo en 11 el maximo de numeros a ingresar
 
@@ -102,36 +103,42 @@
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim oProveedor As New Proveedor
         'carga los datos al objeto
-        oProveedor.cuit = txtCUIT.Text
-        oProveedor.razonSocial = txtRazonSocial.Text
-        oProveedor.responsable = txtResponsable.Text
-        oProveedor.telefono = txtTelefono.Text
-        oProveedor.calle = txtCalle.Text
-        oProveedor.numero = txtNro.Text
-        oProveedor.piso = txtPiso.Text
-        oProveedor.barrio = cmbBarrio.SelectedValue.ToString
-        If (banderaEditar = True) Then ' chequea que la ventana este en modo editar
+        If ValidarVacio() = True Then
+            MsgBox("Ingrese todos los datos requeridos", MsgBoxStyle.Exclamation)
+        Else
 
-            If (MsgBox("Seguro que desea sobreescribir los datos?", MsgBoxStyle.YesNo, "Advertencia") = MsgBoxResult.Yes) Then
+            oProveedor.cuit = txtCUIT.Text
+            oProveedor.razonSocial = txtRazonSocial.Text
+            oProveedor.responsable = txtResponsable.Text
+            oProveedor.telefono = txtTelefono.Text
+            oProveedor.calle = txtCalle.Text
+            oProveedor.numero = txtNro.Text
+            oProveedor.piso = txtPiso.Text
+            oProveedor.barrio = cmbBarrio.SelectedValue.ToString
 
-                If sProveedor.sobreescribirProveedor(oProveedor) Then 'chequea que la carga se haga correctamente
-                    MsgBox("Carga Exitosa")
+
+            If (banderaEditar = True) Then ' chequea que la ventana este en modo editar
+
+                If (MsgBox("Seguro que desea sobreescribir los datos?", MsgBoxStyle.YesNo, "Advertencia") = MsgBoxResult.Yes) Then
+
+                    If sProveedor.sobreescribirProveedor(oProveedor) Then 'chequea que la carga se haga correctamente
+                        MsgBox("Carga Exitosa")
+                    Else
+                        MsgBox("No se pudo cargar")
+                    End If
+
+                End If
+            Else
+                'misma carga para el modo normal de la ventana
+                If sProveedor.nuevoProveedor(oProveedor) Then
+                    MsgBox("Carga Exitosa", MsgBoxStyle.Information)
                 Else
-                    MsgBox("No se pudo cargar")
+                    MsgBox("No se pudo cargar", MsgBoxStyle.Information)
                 End If
 
             End If
-        Else
-            'misma carga para el modo normal de la ventana
-            If sProveedor.nuevoProveedor(oProveedor) Then
-                MsgBox("Carga Exitosa", MsgBoxStyle.Information)
-            Else
-                MsgBox("No se pudo cargar", MsgBoxStyle.Information)
-            End If
 
         End If
-
-
     End Sub
 
     Private Sub btnNuevaProvincia_Click(sender As Object, e As EventArgs) Handles btnNuevaProvincia.Click
@@ -239,6 +246,61 @@
 
         banderaEditar = True
     End Sub
+
+    Private Function ValidarVacio() As Boolean
+        Dim vacio As Boolean = False
+
+        For Each cn As Control In Me.Controls
+
+            If TypeOf cn Is TextBox Then
+                Dim txt As TextBox = cn
+
+                If txt.Text = "" Or txt.Text = String.Empty Then
+                    vacio = True
+                End If
+
+            End If
+
+            If TypeOf cn Is ComboBox Then
+                Dim txt As ComboBox = cn
+
+                If txt.SelectedValue = Nothing Then
+                    vacio = True
+                End If
+
+            End If
+
+            If TypeOf cn Is GroupBox Then
+                Dim group As GroupBox = cn
+                For Each cn1 As Control In group.Controls
+
+                    If TypeOf cn1 Is TextBox Then
+
+
+                        If cn1.Text = "" Or cn1.Text = String.Empty Then
+                            vacio = True
+                        End If
+
+                    End If
+
+                    If TypeOf cn1 Is ComboBox Then
+                        Dim cmb As ComboBox = cn1
+
+                        If cmb.SelectedValue = Nothing Then
+                            vacio = True
+                        End If
+
+                    End If
+                Next
+
+            End If
+
+        Next
+
+        Return vacio
+    End Function
+
+
 
     Private Sub soloNumeros(ByRef e As KeyPressEventArgs) 'valida q solo se ingresen nros en un textBox
         If Char.IsDigit(e.KeyChar) Then

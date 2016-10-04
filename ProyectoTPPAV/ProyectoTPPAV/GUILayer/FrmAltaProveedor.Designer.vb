@@ -38,11 +38,6 @@ Partial Class FrmAltaProveedor
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtCalle = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.txtTelefono = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtResponsable = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
@@ -52,6 +47,11 @@ Partial Class FrmAltaProveedor
         Me.lblRazonSocial = New System.Windows.Forms.Label()
         Me.lblCUIT = New System.Windows.Forms.Label()
         Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtResponsable = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtTelefono = New System.Windows.Forms.TextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -224,53 +224,6 @@ Partial Class FrmAltaProveedor
         Me.Label1.TabIndex = 38
         Me.Label1.Text = "Calle:"
         '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.txtTelefono)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.txtResponsable)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Location = New System.Drawing.Point(18, 132)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(417, 81)
-        Me.GroupBox1.TabIndex = 49
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Contacto:"
-        '
-        'txtTelefono
-        '
-        Me.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtTelefono.Location = New System.Drawing.Point(93, 45)
-        Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(307, 20)
-        Me.txtTelefono.TabIndex = 46
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 52)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(49, 13)
-        Me.Label3.TabIndex = 19
-        Me.Label3.Text = "Telefono"
-        '
-        'txtResponsable
-        '
-        Me.txtResponsable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtResponsable.Location = New System.Drawing.Point(93, 19)
-        Me.txtResponsable.Name = "txtResponsable"
-        Me.txtResponsable.Size = New System.Drawing.Size(307, 20)
-        Me.txtResponsable.TabIndex = 45
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 26)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(72, 13)
-        Me.Label2.TabIndex = 17
-        Me.Label2.Text = "Responsable:"
-        '
         'btnSalir
         '
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -357,6 +310,53 @@ Partial Class FrmAltaProveedor
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(12, 26)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(72, 13)
+        Me.Label2.TabIndex = 17
+        Me.Label2.Text = "Responsable:"
+        '
+        'txtResponsable
+        '
+        Me.txtResponsable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtResponsable.Location = New System.Drawing.Point(93, 19)
+        Me.txtResponsable.Name = "txtResponsable"
+        Me.txtResponsable.Size = New System.Drawing.Size(307, 20)
+        Me.txtResponsable.TabIndex = 45
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(12, 52)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(49, 13)
+        Me.Label3.TabIndex = 19
+        Me.Label3.Text = "Telefono"
+        '
+        'txtTelefono
+        '
+        Me.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtTelefono.Location = New System.Drawing.Point(93, 45)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.Size = New System.Drawing.Size(307, 20)
+        Me.txtTelefono.TabIndex = 46
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.txtTelefono)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.txtResponsable)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Location = New System.Drawing.Point(18, 132)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(417, 81)
+        Me.GroupBox1.TabIndex = 49
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Contacto:"
+        '
         'FrmAltaProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -399,11 +399,6 @@ Partial Class FrmAltaProveedor
     Friend WithEvents Label4 As Label
     Friend WithEvents txtCalle As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents txtTelefono As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents txtResponsable As TextBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents btnSalir As Button
     Friend WithEvents btnBuscar As Button
     Friend WithEvents btnEditar As Button
@@ -415,4 +410,9 @@ Partial Class FrmAltaProveedor
     Friend WithEvents txtPiso As TextBox
     Friend WithEvents lblPiso As Label
     Friend WithEvents btnGuardar As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtResponsable As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents txtTelefono As TextBox
+    Friend WithEvents GroupBox1 As GroupBox
 End Class

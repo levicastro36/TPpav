@@ -45,9 +45,9 @@
 
 
             If sLocalidad.nuevaLocalidad(oLocalidad) Then
-                MsgBox("Carga Exitosa")
+                MsgBox("Carga Exitosa", MsgBoxStyle.Information)
             Else
-                MsgBox("No se pudo cargar")
+                MsgBox("No se pudo cargar", MsgBoxStyle.Information)
             End If
         End If
     End Sub
