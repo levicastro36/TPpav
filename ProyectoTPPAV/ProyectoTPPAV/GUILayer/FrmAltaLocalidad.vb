@@ -24,7 +24,7 @@
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
-        If MsgBox("Esta seguro que desea salir", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+        If MsgBox("Esta seguro que desea salir", MsgBoxStyle.YesNo) = vbYes Then
             Me.Close()
         End If
     End Sub
@@ -37,7 +37,7 @@
         Return rtn
     End Function
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        If (validarCampos(txtNombreLocalidad) & (cmbProvincia.SelectedValue.ToString > -1)) Then
+        If (validarCampos(txtNombreLocalidad) * (Not cmbProvincia.SelectedText = String.Empty)) Then
             Dim oLocalidad As New Localidad
             oLocalidad.nombre = txtNombreLocalidad.Text
             oLocalidad.descripcion = txtDescripcion.Text
