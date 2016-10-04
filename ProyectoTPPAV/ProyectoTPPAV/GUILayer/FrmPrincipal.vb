@@ -6,4 +6,8 @@
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         FrmAltaProveedor.consultarProveedor()
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        FrmAltaProducto.Show()
+    End Sub
 End Class

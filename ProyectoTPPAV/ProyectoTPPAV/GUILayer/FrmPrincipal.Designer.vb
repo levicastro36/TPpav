@@ -23,9 +23,9 @@ Partial Class FrmPrincipal
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -46,14 +46,14 @@ Partial Class FrmPrincipal
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Altas"
         '
-        'Button1
+        'Button3
         '
-        Me.Button1.Location = New System.Drawing.Point(57, 47)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Proveedor"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button3.Location = New System.Drawing.Point(263, 47)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 2
+        Me.Button3.Text = "Direccion"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'Button2
         '
@@ -64,14 +64,14 @@ Partial Class FrmPrincipal
         Me.Button2.Text = "Producto"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'Button3
+        'Button1
         '
-        Me.Button3.Location = New System.Drawing.Point(263, 47)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Direccion"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button1.Location = New System.Drawing.Point(57, 47)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Proveedor"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
