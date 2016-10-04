@@ -17,8 +17,8 @@ Public Class BDHelper
         'ASI NO NOS COMEMOS EL VIAJE DE ESTARLO PONIENDO SIEMPRE.
 
 
-        string_conexion = "Data Source=user-PC;Initial Catalog=BDAutomotor;Integrated Security=True"
-        'string_conexion = "Data Source=EUROCOOL;Initial Catalog=prueba2;Integrated Security=True"
+
+        string_conexion = "Data Source=" & My.Computer.Name.ToString & ";Initial Catalog=prueba2;Integrated Security=True"
         'string_conexion = "Data Source=basedato.db"
     End Sub
 

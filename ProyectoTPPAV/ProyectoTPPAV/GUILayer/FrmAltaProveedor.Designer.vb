@@ -276,7 +276,8 @@ Partial Class FrmAltaProveedor
         '
         'txtCUIT
         '
-        Me.txtCUIT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCUIT.BackColor = System.Drawing.SystemColors.Window
+        Me.txtCUIT.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtCUIT.Location = New System.Drawing.Point(126, 27)
         Me.txtCUIT.Name = "txtCUIT"
         Me.txtCUIT.Size = New System.Drawing.Size(182, 20)
@@ -338,7 +339,6 @@ Partial Class FrmAltaProveedor
         '
         'txtTelefono
         '
-        Me.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTelefono.Location = New System.Drawing.Point(93, 45)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(307, 20)
