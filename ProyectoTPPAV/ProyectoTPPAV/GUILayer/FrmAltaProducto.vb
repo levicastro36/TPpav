@@ -6,9 +6,21 @@
     Private STipoProd As New ServicioTipoProducto
     Private Sproveedor As New ServicioProveedor
     Dim banderaEditar As Boolean = False
+    Shared transaccion As Boolean = True
 
     Private Sub FrmAltaProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetearCombos()
+        txtCodigo.Text = String.Empty
+        txtCosto.Text = String.Empty
+        txtDescripcion.Text = String.Empty
+        txtNombre.Text = String.Empty
+        txtPrecioVenta.Text = String.Empty
+        txtStockActual.Text = String.Empty
+        txtStockMin.Text = String.Empty
+        txt_StockEntrante.Text = String.Empty
+    End Sub
+    Shared Sub frmTransaccion()
+        transaccion = True
     End Sub
     Public Sub SetearCombos()
         Me.cmbMarca.DataSource = Nothing
@@ -168,32 +180,51 @@
             oproducto.codProducto = txtCodigo.Text
             oproducto.nombre = txtNombre.Text
             oproducto.descripcion = txtDescripcion.Text
+            oproducto.corMarca = cmbMarca.SelectedValue.ToString
             oproducto.codModelo = cmbModelo.SelectedValue.ToString
             oproducto.codTipoProd = cmbTipoProducto.SelectedValue.ToString
+            oproducto.costo = txtCosto.Text
+            oproducto.precio = txtPrecioVenta.Text
+            oproducto.stockActual = txtStockActual.Text
+            oproducto.stockMin = txtStockMin.Text
+            oproducto.stockEntrante = txt_StockEntrante.Text
             oproducto.codProveedor = cmbProveedor.SelectedValue.ToString
 
 
-            If (banderaEditar = True) Then ' chequea que la ventana este en modo editar
+            If Not transaccion Then
+                If (banderaEditar = True) Then ' chequea que la ventana este en modo editar
 
-                If (MsgBox("Seguro que desea sobreescribir los datos?", MsgBoxStyle.YesNo, "Advertencia") = MsgBoxResult.Yes) Then
+                    If (MsgBox("Seguro que desea sobreescribir los datos?", MsgBoxStyle.YesNo, "Advertencia") = MsgBoxResult.Yes) Then
 
+                        If sProducto.nuevoProveedor(oproducto) Then
+                            MsgBox("Carga Exitosa", MsgBoxStyle.Information)
+                        Else
+                            MsgBox("No se pudo cargar", MsgBoxStyle.Information)
+                        End If
+
+                    End If
+
+                Else
+                    'misma carga para el modo normal de la ventana
                     If sProducto.nuevoProveedor(oproducto) Then
                         MsgBox("Carga Exitosa", MsgBoxStyle.Information)
                     Else
                         MsgBox("No se pudo cargar", MsgBoxStyle.Information)
                     End If
-
                 End If
-
             Else
-                'misma carga para el modo normal de la ventana
-                If sProducto.nuevoProveedor(oproducto) Then
-                    MsgBox("Carga Exitosa", MsgBoxStyle.Information)
+                Dim accion As String
+
+                If sProducto.existeProd(oproducto.codProducto) Then
+                    accion = "ACTUALIZAR"
                 Else
-                    MsgBox("No se pudo cargar", MsgBoxStyle.Information)
+                    accion = "NUEVO"
                 End If
+                FrmGralProductos.addProducto(oproducto, accion)
+                Me.Close()
             End If
-        End If
+
+            End If
     End Sub
 
     Private Function ValidarVacio() As Boolean

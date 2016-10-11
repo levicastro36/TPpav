@@ -21,4 +21,8 @@
 
         Return rtn
     End Function
+
+    Public Function existeProd(ByVal codigo As String) As Boolean
+        Return oDAOproducto.existe(codigo)
+    End Function
 End Class

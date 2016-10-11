@@ -81,13 +81,13 @@ Public Class DBHelper
             ' El datatable se carga con el resultado de ejecutar la sentencia en el motor de base de datos
             tabla.Load(cmd.ExecuteReader)
             ' La función retorna el objeto datatable con 0, 1 o mas registros
+            Return tabla
         Catch ex As Exception
-            'Throw ex
             MsgBox(ex.ToString)
+            Throw ex
         Finally
             conexion.Close()
             conexion.Dispose()
         End Try
-        Return tabla
     End Function
 End Class

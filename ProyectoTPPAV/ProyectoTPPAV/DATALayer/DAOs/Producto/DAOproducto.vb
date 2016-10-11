@@ -40,4 +40,15 @@ from Productos P, Marcas M, Modelo Mo, Proveedores Pr
 where (P.codModelo=Mo.codModelo) and (Mo.codigoMarca=M.codMarca) and(p.cuitProveedor=Pr.cuit)and P.codProducto = " & codigo & " "
         Return DBHelper.getDBHelper().ConsultaSQL(strSQL)
     End Function
+
+    Public Function existe(ByVal codigo As String) As Boolean
+        Dim rtn As Boolean = False
+        Dim tabla As DataTable = DBHelper.getDBHelper.ConsultaSQL("SELECT codProducto FROM Productos WHERE codProducto = " + codigo)
+        For Each row As DataRow In tabla.Rows
+            If row.Item("codProducto").ToString = codigo Then
+                rtn = True
+            End If
+        Next
+        Return rtn
+    End Function
 End Class

@@ -31,16 +31,14 @@ Partial Class FrmGralProductos
         Me.id_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.desc_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nomModelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.codModelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nomTipoProd = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.codTipoProd = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.stockActual = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.stockMin = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nom_proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.stock_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.costo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.stock_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.accion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgv_gralProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -56,7 +54,7 @@ Partial Class FrmGralProductos
         '
         'btn_salir
         '
-        Me.btn_salir.Location = New System.Drawing.Point(666, 337)
+        Me.btn_salir.Location = New System.Drawing.Point(693, 337)
         Me.btn_salir.Name = "btn_salir"
         Me.btn_salir.Size = New System.Drawing.Size(75, 23)
         Me.btn_salir.TabIndex = 8
@@ -65,7 +63,7 @@ Partial Class FrmGralProductos
         '
         'btn_aceptar
         '
-        Me.btn_aceptar.Location = New System.Drawing.Point(575, 337)
+        Me.btn_aceptar.Location = New System.Drawing.Point(602, 337)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(75, 23)
         Me.btn_aceptar.TabIndex = 7
@@ -85,12 +83,12 @@ Partial Class FrmGralProductos
         '
         Me.dgv_gralProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgv_gralProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_gralProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_prod, Me.nombre, Me.desc_prod, Me.nomModelo, Me.codModelo, Me.nomTipoProd, Me.codTipoProd, Me.stockActual, Me.stockMin, Me.precio, Me.nom_proveedor, Me.stock_prod, Me.id_proveedor, Me.accion})
+        Me.dgv_gralProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_prod, Me.nombre, Me.desc_prod, Me.codModelo, Me.codTipoProd, Me.stockActual, Me.stockMin, Me.precio, Me.costo, Me.id_proveedor, Me.stock_prod, Me.accion})
         Me.dgv_gralProductos.Location = New System.Drawing.Point(12, 12)
         Me.dgv_gralProductos.Name = "dgv_gralProductos"
         Me.dgv_gralProductos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dgv_gralProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_gralProductos.Size = New System.Drawing.Size(841, 313)
+        Me.dgv_gralProductos.Size = New System.Drawing.Size(756, 313)
         Me.dgv_gralProductos.TabIndex = 5
         '
         'btn_editar
@@ -104,37 +102,27 @@ Partial Class FrmGralProductos
         '
         'id_prod
         '
-        Me.id_prod.FillWeight = 44.38737!
+        Me.id_prod.FillWeight = 62.60324!
         Me.id_prod.HeaderText = "Codigo Prodcuto"
         Me.id_prod.Name = "id_prod"
         '
         'nombre
         '
+        Me.nombre.FillWeight = 107.8914!
         Me.nombre.HeaderText = "Nombre"
         Me.nombre.Name = "nombre"
         '
         'desc_prod
         '
-        Me.desc_prod.FillWeight = 272.0902!
+        Me.desc_prod.FillWeight = 293.5619!
         Me.desc_prod.HeaderText = "Descripcion"
         Me.desc_prod.Name = "desc_prod"
-        '
-        'nomModelo
-        '
-        Me.nomModelo.HeaderText = "Modelo"
-        Me.nomModelo.Name = "nomModelo"
         '
         'codModelo
         '
         Me.codModelo.HeaderText = "codModelo"
         Me.codModelo.Name = "codModelo"
         Me.codModelo.Visible = False
-        '
-        'nomTipoProd
-        '
-        Me.nomTipoProd.HeaderText = "Tipo Producto"
-        Me.nomTipoProd.Name = "nomTipoProd"
-        Me.nomTipoProd.Visible = False
         '
         'codTipoProd
         '
@@ -160,18 +148,11 @@ Partial Class FrmGralProductos
         Me.precio.Name = "precio"
         Me.precio.Visible = False
         '
-        'nom_proveedor
+        'costo
         '
-        Me.nom_proveedor.FillWeight = 83.35817!
-        Me.nom_proveedor.HeaderText = "Proveedor"
-        Me.nom_proveedor.Name = "nom_proveedor"
-        Me.nom_proveedor.Visible = False
-        '
-        'stock_prod
-        '
-        Me.stock_prod.FillWeight = 50.76143!
-        Me.stock_prod.HeaderText = "Stock Ingresante"
-        Me.stock_prod.Name = "stock_prod"
+        Me.costo.FillWeight = 44.5168!
+        Me.costo.HeaderText = "Costo"
+        Me.costo.Name = "costo"
         '
         'id_proveedor
         '
@@ -179,9 +160,15 @@ Partial Class FrmGralProductos
         Me.id_proveedor.Name = "id_proveedor"
         Me.id_proveedor.Visible = False
         '
+        'stock_prod
+        '
+        Me.stock_prod.FillWeight = 54.7672!
+        Me.stock_prod.HeaderText = "Stock Ingresante"
+        Me.stock_prod.Name = "stock_prod"
+        '
         'accion
         '
-        Me.accion.FillWeight = 49.40288!
+        Me.accion.FillWeight = 53.30144!
         Me.accion.HeaderText = "Accion"
         Me.accion.Name = "accion"
         '
@@ -189,7 +176,7 @@ Partial Class FrmGralProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(905, 372)
+        Me.ClientSize = New System.Drawing.Size(779, 372)
         Me.Controls.Add(Me.btn_editar)
         Me.Controls.Add(Me.btn_eliminar)
         Me.Controls.Add(Me.btn_salir)
@@ -212,15 +199,13 @@ Partial Class FrmGralProductos
     Friend WithEvents id_prod As DataGridViewTextBoxColumn
     Friend WithEvents nombre As DataGridViewTextBoxColumn
     Friend WithEvents desc_prod As DataGridViewTextBoxColumn
-    Friend WithEvents nomModelo As DataGridViewTextBoxColumn
     Friend WithEvents codModelo As DataGridViewTextBoxColumn
-    Friend WithEvents nomTipoProd As DataGridViewTextBoxColumn
     Friend WithEvents codTipoProd As DataGridViewTextBoxColumn
     Friend WithEvents stockActual As DataGridViewTextBoxColumn
     Friend WithEvents stockMin As DataGridViewTextBoxColumn
     Friend WithEvents precio As DataGridViewTextBoxColumn
-    Friend WithEvents nom_proveedor As DataGridViewTextBoxColumn
-    Friend WithEvents stock_prod As DataGridViewTextBoxColumn
+    Friend WithEvents costo As DataGridViewTextBoxColumn
     Friend WithEvents id_proveedor As DataGridViewTextBoxColumn
+    Friend WithEvents stock_prod As DataGridViewTextBoxColumn
     Friend WithEvents accion As DataGridViewTextBoxColumn
 End Class
