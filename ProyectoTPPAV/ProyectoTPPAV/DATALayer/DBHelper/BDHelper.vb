@@ -55,7 +55,6 @@ Public Class BDHelper
             cmd.CommandText = strSql
             ' Retorna el resultado de ejecutar el comando
             number = cmd.ExecuteNonQuery()
-            Return number
         Catch ex As Exception
             'Throw ex
             MsgBox(ex.ToString)
@@ -64,6 +63,7 @@ Public Class BDHelper
             conexion.Close()
             conexion.Dispose()
         End Try
+        Return number
     End Function
 
     Public Function ConsultaSQL(ByVal strSql As String) As Data.DataTable
@@ -81,7 +81,6 @@ Public Class BDHelper
             ' El datatable se carga con el resultado de ejecutar la sentencia en el motor de base de datos
             tabla.Load(cmd.ExecuteReader)
             ' La función retorna el objeto datatable con 0, 1 o mas registros
-            Return tabla
         Catch ex As Exception
             'Throw ex
             MsgBox(ex.ToString)
@@ -89,5 +88,6 @@ Public Class BDHelper
             conexion.Close()
             conexion.Dispose()
         End Try
+        Return tabla
     End Function
 End Class
