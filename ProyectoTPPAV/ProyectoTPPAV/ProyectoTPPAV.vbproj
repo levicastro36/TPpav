@@ -124,6 +124,30 @@
     <Compile Include="DATALayer\DAOs\Producto\DAOproducto.vb" />
     <Compile Include="DATALayer\DAOs\Producto\DAOtipoProducto.vb" />
     <Compile Include="DATALayer\DBHelper\BDHelper.vb" />
+    <Compile Include="GUILayer\FrmAltaModelo.Designer.vb">
+      <DependentUpon>FrmAltaModelo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\FrmAltaModelo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\FrmAltaMarca.Designer.vb">
+      <DependentUpon>FrmAltaMarca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\FrmAltaMarca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\FrmAltaTipoProducto.Designer.vb">
+      <DependentUpon>FrmAltaTipoProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\FrmAltaTipoProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\FrmAltaCliente.Designer.vb">
+      <DependentUpon>FrmAltaCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\FrmAltaCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUILayer\FrmAltaBarrio.Designer.vb">
       <DependentUpon>FrmAltaBarrio.vb</DependentUpon>
     </Compile>
@@ -181,6 +205,15 @@
     <EmbeddedResource Include="GUILayer\FrmAltaBarrio.resx">
       <DependentUpon>FrmAltaBarrio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\FrmAltaCliente.resx">
+      <DependentUpon>FrmAltaCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\FrmAltaMarca.resx">
+      <DependentUpon>FrmAltaMarca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\FrmAltaModelo.resx">
+      <DependentUpon>FrmAltaModelo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\FrmAltaProveedor.resx">
       <DependentUpon>FrmAltaProveedor.vb</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\FrmAltaProducto.resx">
       <DependentUpon>FrmAltaProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\FrmAltaTipoProducto.resx">
+      <DependentUpon>FrmAltaTipoProducto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.vb</DependentUpon>

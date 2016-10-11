@@ -1,8 +1,8 @@
-﻿Public Class FrmAltaProvincia
+﻿Public Class FrmAltaMarca
+    Private sMarca As New ServicioMarca
 
-    Private sProvincia As New ServicioPronvia
-    Private Sub FrmAltaProvincia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txtNombreProvincia.Text = Nothing
+    Private Sub FrmAltaMarca_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtNombre.Text = Nothing
         txtDescripcion.Text = Nothing
     End Sub
 
@@ -14,18 +14,21 @@
         Return rtn
     End Function
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        If validarCampos(txtNombreProvincia) Then
-            Dim oprovincia As New Provincia
-            oprovincia.nombre = txtNombreProvincia.Text
-            oprovincia.descripcion = txtDescripcion.Text
-
-            If sProvincia.nuevaProvincia(oprovincia) Then
+        If validarCampos(txtNombre) Then
+            Dim oMarca As New Marca
+            oMarca.nombre = txtNombre.Text
+            oMarca.nombre = txtDescripcion.Text
+            MsgBox(BDHelper.getDBHelper.deDondeViene)
+            oMarca.tipo = BDHelper.getDBHelper.deDondeViene.ToString
+            If sMarca.nuevAmARCA(oMarca) Then
                 MsgBox("Carga Exitosa", MsgBoxStyle.Information)
+                txtNombre.Text = Nothing
+                txtDescripcion.Text = Nothing
             Else
                 MsgBox("No se pudo cargar")
             End If
         Else
-            MsgBox("Nombre de Provincia vacio", MsgBoxStyle.Information)
+            MsgBox("Nombre de Tipo vacio", MsgBoxStyle.Information)
         End If
     End Sub
 

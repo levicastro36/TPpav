@@ -50,7 +50,8 @@ Public Class DAOproveedor
     End Function
 
     Public Function getCuit(cuit As String) As DataTable
-        Dim strSQL As String = "select cuit,razonSocial,responsable,telefono,calle,altura,piso,Barrios.nombre as nombreBarr,Barrios.codBarrio as codBarrio,Provincias.nombre as nombrePro,Provincias.codProvincia as codProvincia,Localidades.nombre as nombreLoc,Localidades.codLocalidad as codLocalidad from Proveedores inner join Barrios on (Barrios.codBarrio=Proveedores.codBarrio) inner join Localidades on (Barrios.codLocalidad=Localidades.codLocalidad) inner join Provincias on (Localidades.codProvincia=provincias.codProvincia) and cuit =" + cuit
+        Dim strSQL As String = ""
+        strSQL = "select P.cuit,P.razonSocial,P.responsable,P.telefono,P.calle,P.altura,P.piso,B.nombre as nombreBarr,B.codBarrio as codBarrio,Pr.nombre as nombrePro,Pr.codProvincia as codProvincia,L.nombre as nombreLoc,L.codLocalidad as codLocalidad from Proveedores P, Barrios B, Provincias Pr, Localidades L where (B.codBarrio=P.codBarrio) and (B.codLocalidad=L.codLocalidad) and (L.codProvincia=Pr.codProvincia) and p.cuit = " & cuit & " "
         Return BDHelper.getDBHelper().ConsultaSQL(strSQL)
     End Function
 End Class

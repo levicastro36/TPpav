@@ -1,13 +1,10 @@
-﻿Public Class FrmAltaProveedor
+﻿Public Class FrmAltaCliente
     Private sProvincia As New ServicioPronvia
     Private sLocalidad As New ServicioLocalidad
     Private sBarrio As New ServicioBarrio
-    Private sProveedor As New ServicioProveedor
+    Private SCliente As ServicioCliente
     Dim banderaEditar As Boolean = False
-
-
-    Private Sub FrmAltaProveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub FrmAltaCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetearCombos()
 
         btnEditar.Enabled = False
@@ -15,10 +12,16 @@
         btnGuardar.Enabled = True
         btnGuardar.Visible = True
 
-        txtCUIT.MaxLength = 11 'seteo en 11 el maximo de numeros a ingresar
-
     End Sub
+    Public Sub SetearCombos()
+        Me.cmbProvincia.DataSource = Nothing
+        Me.cmbLocalidad.DataSource = Nothing
+        Me.cmbBarrio.DataSource = Nothing
 
+        Me.cmbProvincia.Items.Clear()
+        Me.cmbLocalidad.Items.Clear()
+        Me.cmbBarrio.Items.Clear()
+    End Sub
     Friend Sub consultarProveedor()
         Me.ShowDialog()
     End Sub
@@ -41,7 +44,7 @@
         CargarCombo(cmbProvincia, sProvincia.listarProvincias(), "codProvincia", "nombre")
     End Sub
 
-    Private Sub cmbLocalidad_Click(ander As Object, e As EventArgs) Handles cmbLocalidad.Click
+    Private Sub cmbLocalidad_Click(sender As Object, e As EventArgs) Handles cmbLocalidad.Click
         If (Not (cmbProvincia.SelectedValue = Nothing)) Then 'valida que el combo provincias tenga cargado algo 
             CargarCombo(cmbLocalidad, sLocalidad.listarLocalidades(cmbProvincia.SelectedValue.ToString), "codLocalidad", "nombre")
         Else
@@ -60,8 +63,8 @@
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         'se setea todo a blanco
-        Me.txtCUIT.Enabled = True
-        Me.txtResponsable.Enabled = True
+        Me.txtCodigo.Enabled = True
+        Me.txtApellido.Enabled = True
         Me.txtTelefono.Enabled = True
         Me.txtNro.Enabled = True
         Me.txtCalle.Enabled = True
@@ -73,9 +76,9 @@
         btnGuardar.Enabled = True
         btnGuardar.Visible = True
         btnEditar.Visible = False
-        Me.txtCUIT.Text = Nothing
-        Me.txtRazonSocial.Text = Nothing
-        Me.txtResponsable.Text = Nothing
+        Me.txtCodigo.Text = Nothing
+        Me.txtNombre.Text = Nothing
+        Me.txtApellido.Text = Nothing
         Me.txtTelefono.Text = Nothing
         Me.txtNro.Text = Nothing
         Me.txtCalle.Text = Nothing
@@ -84,29 +87,25 @@
         banderaEditar = False
     End Sub
 
-
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        Dim oProveedor As New Proveedor
+        Dim oCliente As New Cliente
         'carga los datos al objeto
         If ValidarVacio() = True Then
             MsgBox("Ingrese todos los datos requeridos", MsgBoxStyle.Exclamation)
         Else
 
-            oProveedor.cuit = txtCUIT.Text
-            oProveedor.razonSocial = txtRazonSocial.Text
-            oProveedor.responsable = txtResponsable.Text
-            oProveedor.telefono = txtTelefono.Text
-            oProveedor.calle = txtCalle.Text
-            oProveedor.numero = txtNro.Text
-            oProveedor.piso = txtPiso.Text
-            oProveedor.barrio = cmbBarrio.SelectedValue.ToString
-
-
+            oCliente.nombre = txtNombre.Text
+            oCliente.apellido = txtApellido.Text
+            oCliente.telefono = txtTelefono.Text
+            oCliente.calle = txtCalle.Text
+            oCliente.numero = txtNro.Text
+            oCliente.piso = txtPiso.Text
+            oCliente.barrio = cmbBarrio.SelectedValue.ToString
             If (banderaEditar = True) Then ' chequea que la ventana este en modo editar
 
                 If (MsgBox("Seguro que desea sobreescribir los datos?", MsgBoxStyle.YesNo, "Advertencia") = MsgBoxResult.Yes) Then
 
-                    If sProveedor.sobreescribirProveedor(oProveedor) Then 'chequea que la carga se haga correctamente
+                    If SCliente.sobreescribirCliente(oCliente) Then 'chequea que la carga se haga correctamente
                         MsgBox("Carga Exitosa")
                     Else
                         MsgBox("No se pudo cargar")
@@ -114,15 +113,15 @@
 
                 End If
             Else
-                'misma carga para el modo normal de la ventana
-                If sProveedor.nuevoProveedor(oProveedor) Then
-                    MsgBox("Carga Exitosa", MsgBoxStyle.Information)
+                If SCliente.nuevoCliente(oCliente) Then 'chequea que la carga se haga correctamente
+                    MsgBox("Carga Exitosa")
                 Else
-                    MsgBox("No se pudo cargar", MsgBoxStyle.Information)
+                    MsgBox("No se pudo cargar")
                 End If
+                'misma carga para el modo normal de la ventana
+
 
             End If
-
         End If
     End Sub
 
@@ -146,69 +145,66 @@
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Dim tabla As New DataTable
-        Dim existeCuit As Boolean
-        If (txtCUIT.Text = Nothing) Then
-            MsgBox("Ingrese un CUIT para buscar", MsgBoxStyle.Information)
+        txtCodigo.Enabled = True
+        Dim existeCodigo As Boolean
+        If (txtCodigo.Text = Nothing) Then
+            MsgBox("Ingrese un codigo para buscar", MsgBoxStyle.Information)
 
         Else
-            existeCuit = False
-            If (Len(txtCUIT.Text) < 11) Then 'propiedad len() cuenta los numeros del textbox. lo encontre en internet
-                MsgBox("Ingrese un CUIT valido. (11 numeros)", MsgBoxStyle.Exclamation)
-            Else
+            existeCodigo = False
 
+            'va a buscar datos a la base y los guarda en datatable 
+            tabla = SCliente.buscarCodigo()
 
-                tabla = sProveedor.buscarCuit(txtCUIT.Text.ToString) 'va a buscar datos a la base y los guarda en datatable 
+            For Each row In tabla.Rows 'ciclo for para recorrer fila por fila del datatable
 
-                For Each row In tabla.Rows 'ciclo for para recorrer fila por fila del datatable
+                If txtCodigo.Text = row("cuit").ToString() Then
+                    existeCodigo = True
 
-                    If txtCUIT.Text = row("cuit").ToString() Then
-                        existeCuit = True
-
-                    End If
-
-                Next row
-
-                If (existeCuit = True) Then
-                    For Each row In tabla.Rows
-                        'carga en la ventana los datos de cada elemento
-                        If (txtCUIT.Text = row("cuit").ToString()) Then
-                            txtRazonSocial.Text = row("razonSocial")
-                            txtResponsable.Text = row("responsable")
-                            txtTelefono.Text = row("telefono")
-                            txtCalle.Text = row("calle")
-                            txtNro.Text = row.item("altura")
-                            txtPiso.Text = row("piso")
-
-                            SetearCombos()  'borra los datasource de los combo para evitar conflicto
-
-                            'carga de nuevo los combo pero con el metodo para modo editar
-                            CargarComboEditar(cmbProvincia, sProvincia.listarProvincias(), "codProvincia", "nombre", row("codProvincia"))
-                            CargarComboEditar(cmbLocalidad, sLocalidad.listarLocalidades(row("codProvincia")), "codLocalidad", "nombre", row("codLocalidad"))
-                            CargarComboEditar(cmbBarrio, sBarrio.listarBarrios(row("codLocalidad")), "codBarrio", "nombre", row("codBarrio"))
-
-                            Me.cmbProvincia.Enabled = False
-                            Me.cmbLocalidad.Enabled = False
-                            Me.cmbBarrio.Enabled = False
-
-                            btnGuardar.Enabled = False    'bloqueo todos los elementos de la ventana
-                            btnGuardar.Visible = False
-                            btnEditar.Enabled = True
-                            btnEditar.Visible = True
-
-                            Me.txtRazonSocial.Enabled = False
-                            Me.txtResponsable.Enabled = False
-                            Me.txtTelefono.Enabled = False
-                            Me.txtNro.Enabled = False
-                            Me.txtCalle.Enabled = False
-                            Me.txtPiso.Enabled = False
-                        End If
-                        Exit For
-                    Next row
-                Else
-                    MsgBox("CUIT no encontrado en los datos", MsgBoxStyle.Information)
                 End If
+
+            Next row
+
+            If (existeCodigo = True) Then
+                For Each row In tabla.Rows
+                    'carga en la ventana los datos de cada elemento
+                    If (txtCodigo.Text = row("codCliente").ToString()) Then
+                        txtNombre.Text = row("nombre")
+                        txtApellido.Text = row("apellido")
+                        txtTelefono.Text = row("telefono")
+                        txtCalle.Text = row("calle")
+                        txtNro.Text = row.item("altura")
+                        txtPiso.Text = row("piso")
+
+                        SetearCombos()  'borra los datasource de los combo para evitar conflicto
+
+                        'carga de nuevo los combo pero con el metodo para modo editar
+                        CargarComboEditar(cmbProvincia, sProvincia.listarProvincias(), "codProvincia", "nombre", row("codProvincia"))
+                        CargarComboEditar(cmbLocalidad, sLocalidad.listarLocalidades(row("codProvincia")), "codLocalidad", "nombre", row("codLocalidad"))
+                        CargarComboEditar(cmbBarrio, sBarrio.listarBarrios(row("codLocalidad")), "codBarrio", "nombre", row("codBarrio"))
+
+                        Me.cmbProvincia.Enabled = False
+                        Me.cmbLocalidad.Enabled = False
+                        Me.cmbBarrio.Enabled = False
+
+                        btnGuardar.Enabled = False    'bloqueo todos los elementos de la ventana
+                        btnGuardar.Visible = False
+                        btnEditar.Enabled = True
+                        btnEditar.Visible = True
+
+                        Me.txtApellido.Enabled = False
+                        Me.txtTelefono.Enabled = False
+                        Me.txtNro.Enabled = False
+                        Me.txtCalle.Enabled = False
+                        Me.txtPiso.Enabled = False
+                    End If
+                    Exit For
+                Next row
+            Else
+                MsgBox("Codigo no encontrado en los datos", MsgBoxStyle.Information)
             End If
         End If
+
     End Sub
 
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
@@ -222,9 +218,9 @@
         btnGuardar.Enabled = True   'boton ahora visible
         btnGuardar.Visible = True
 
-        Me.txtCUIT.Enabled = False
-        Me.txtRazonSocial.Enabled = True
-        Me.txtResponsable.Enabled = True
+        txtCodigo.Enabled = False
+        Me.txtApellido.Enabled = True
+        Me.txtNombre.Enabled = True
         Me.txtTelefono.Enabled = True
         Me.txtNro.Enabled = True
         Me.txtCalle.Enabled = True
@@ -238,24 +234,6 @@
 
         For Each cn As Control In Me.Controls  'recorro todos los elementos del form
 
-            If TypeOf cn Is TextBox Then        'chequeo si es textbox
-                Dim txt As TextBox = cn         'copio el elem en para poder trabajar en el
-
-                If txt.Text = "" Or txt.Text = String.Empty Then  'valido
-                    vacio = True
-                End If
-
-            End If
-
-            If TypeOf cn Is ComboBox Then
-                Dim txt As ComboBox = cn
-
-                If txt.SelectedValue = Nothing Then
-                    vacio = True
-                End If
-
-            End If
-
             If TypeOf cn Is GroupBox Then
                 Dim group As GroupBox = cn
                 For Each cn1 As Control In group.Controls
@@ -263,7 +241,7 @@
                     If TypeOf cn1 Is TextBox Then
 
 
-                        If cn1.Text = "" Or cn1.Text = String.Empty Then
+                        If ((cn1.Text = "" Or cn1.Text = String.Empty) And cn1.Tag <> 1) Then
                             vacio = True
                         End If
 
@@ -288,17 +266,6 @@
 
         Return vacio
     End Function
-
-    Public Sub SetearCombos()
-        Me.cmbProvincia.DataSource = Nothing
-        Me.cmbLocalidad.DataSource = Nothing
-        Me.cmbBarrio.DataSource = Nothing
-
-        Me.cmbProvincia.Items.Clear()
-        Me.cmbLocalidad.Items.Clear()
-        Me.cmbBarrio.Items.Clear()
-    End Sub
-
     Private Sub soloNumeros(ByRef e As KeyPressEventArgs) 'valida q solo se ingresen nros en un textBox
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = False
@@ -323,8 +290,15 @@
         End If
     End Sub
 
-    Private Sub CUITTexto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCUIT.KeyPress
+    Private Sub CodigoTexto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCodigo.KeyPress
         soloNumeros(e)
+    End Sub
+
+    Private Sub NombreTexto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombre.KeyPress
+        soloLetras(e)
+    End Sub
+    Private Sub ApellidoTexto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtApellido.KeyPress
+        soloLetras(e)
     End Sub
 
     Private Sub TelefonoTexto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTelefono.KeyPress
@@ -339,10 +313,4 @@
         soloNumeros(e)
     End Sub
 
-    Private Sub ResponsableTexto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtResponsable.KeyPress
-        soloLetras(e)
-    End Sub
-    Private Sub RazonSocialTexto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtRazonSocial.KeyPress
-        soloLetras(e)
-    End Sub
 End Class

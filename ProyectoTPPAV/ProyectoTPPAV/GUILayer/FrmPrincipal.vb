@@ -10,4 +10,8 @@
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         FrmAltaProducto.Show()
     End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        FrmAltaCliente.Show()
+    End Sub
 End Class

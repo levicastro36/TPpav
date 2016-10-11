@@ -9,6 +9,7 @@ Public Class BDHelper
     Private string_conexion As String
     Private Shared instance As BDHelper 'Unica instancia de la clase
 
+    Public deDondeViene As Integer
     Private Sub New()
 
         'IMPORTANTE
