@@ -6,4 +6,6 @@
     Public Property codTipoProd As String
     Public Property precio As String
     Public Property codProveedor As String
+    Public Property stockActual As String
+    Public Property stockMin As String
 End Class

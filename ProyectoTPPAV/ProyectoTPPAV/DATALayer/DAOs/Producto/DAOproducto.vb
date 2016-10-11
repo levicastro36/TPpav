@@ -12,7 +12,9 @@
         sql += "'" + oProducto.codModelo + "',"
         sql += "'" + oProducto.codTipoProd + "',"
         sql += "'" + oProducto.precio + "',"
-        sql += "'" + oProducto.codProveedor + "')"
+        sql += "'" + oProducto.codProveedor + "',"
+        sql += "'" + oProducto.stockActual + "',"
+        sql += "'" + oProducto.stockMin + "')"
 
         If (DBHelper.getDBHelper.EjecutarSQL(sql) >= 1) Then
             rtn = True
