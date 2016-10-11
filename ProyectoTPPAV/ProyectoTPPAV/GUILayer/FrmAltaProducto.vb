@@ -176,7 +176,6 @@
         If ValidarVacio() = True Then
             MsgBox("Ingrese todos los datos requeridos", MsgBoxStyle.Exclamation)
         Else
-            MsgBox(txtCodigo.Text)
             oproducto.codProducto = txtCodigo.Text
             oproducto.nombre = txtNombre.Text
             oproducto.descripcion = txtDescripcion.Text
@@ -189,7 +188,7 @@
             oproducto.stockMin = txtStockMin.Text
             oproducto.stockEntrante = txt_StockEntrante.Text
             oproducto.codProveedor = cmbProveedor.SelectedValue.ToString
-
+            oproducto.stockMin = txtStockMin.Text
 
             If Not transaccion Then
                 If (banderaEditar = True) Then ' chequea que la ventana este en modo editar
