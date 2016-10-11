@@ -14,7 +14,7 @@ Public Class DAOcliente
         sql += "'" + oCliente.piso + "',"
         sql += "'" + oCliente.barrio + "')"
 
-        If (BDHelper.getDBHelper.EjecutarSQL(sql) >= 1) Then
+        If (DBHelper.getDBHelper.EjecutarSQL(sql) >= 1) Then
             rtn = True
         End If
 
@@ -35,7 +35,7 @@ Public Class DAOcliente
         sql += "codBarrio = '" & oCliente.barrio & "' "
         sql += "WHERE codCliente = " & oCliente.codigoCliente & " "
 
-        If (BDHelper.getDBHelper.EjecutarSQL(sql) >= 1) Then
+        If (DBHelper.getDBHelper.EjecutarSQL(sql) >= 1) Then
             rtn = True
         End If
 
@@ -44,13 +44,13 @@ Public Class DAOcliente
 
     Public Function getClientes() As DataTable
         Dim strSQL As String = "Select * from Clientes"
-        Return BDHelper.getDBHelper().ConsultaSQL(strSQL)
+        Return DBHelper.getDBHelper().ConsultaSQL(strSQL)
     End Function
 
     Public Function getCodigo() As DataTable
         Dim SQL As String = ""
 
         SQL = "select c.codCliente,c.nombre,c.apellido,c.telefono,c.calle,c.altura,c.piso,c.codBarrio,B.nombre as nombreBarr,B.codBarrio as codBarrio,Pr.nombre as nombrePro,Pr.codProvincia as codProvincia,L.nombre as nombreLoc,L.codLocalidad as codLocalidad from Clientes C, Barrios B, Provincias Pr, Localidades L where (B.codBarrio=c.codBarrio) and (B.codLocalidad=L.codLocalidad) and (L.codProvincia=Pr.codProvincia)"
-        Return BDHelper.getDBHelper().ConsultaSQL(SQL)
+        Return DBHelper.getDBHelper().ConsultaSQL(SQL)
     End Function
 End Class

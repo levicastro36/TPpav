@@ -14,7 +14,7 @@
         sql += "'" + oProducto.precio + "',"
         sql += "'" + oProducto.codProveedor + "')"
 
-        If (BDHelper.getDBHelper.EjecutarSQL(sql) >= 1) Then
+        If (DBHelper.getDBHelper.EjecutarSQL(sql) >= 1) Then
             rtn = True
         End If
 
@@ -27,7 +27,7 @@
                SET nombre ='" & oProducto.nombre & "',descripcion='" & oProducto.descripcion & "',codModelo=" & oProducto.codModelo & ",codTipoProd=" & oProducto.codTipoProd & ",precio=" & oProducto.precio & ",cuitProveedor=" & oProducto.codProveedor & "
                WHERE codProducto= " & oProducto.codProducto & " "
 
-        If (BDHelper.getDBHelper.EjecutarSQL(sql) >= 1) Then
+        If (DBHelper.getDBHelper.EjecutarSQL(sql) >= 1) Then
             rtn = True
         End If
 
@@ -38,6 +38,6 @@
         strSQL = "select P.codProducto,P.nombre,P.descripcion,P.codModelo,P.codTipoProd,P.precio,P.cuitProveedor,M.nombre as nombreMar,M.codMarca as codMarca,Mo.nombre as nombreMo,Mo.codModelo as codMo,Pr.razonSocial as nombreRazon
 from Productos P, Marcas M, Modelo Mo, Proveedores Pr
 where (P.codModelo=Mo.codModelo) and (Mo.codigoMarca=M.codMarca) and(p.cuitProveedor=Pr.cuit)and P.codProducto = " & codigo & " "
-        Return BDHelper.getDBHelper().ConsultaSQL(strSQL)
+        Return DBHelper.getDBHelper().ConsultaSQL(strSQL)
     End Function
 End Class

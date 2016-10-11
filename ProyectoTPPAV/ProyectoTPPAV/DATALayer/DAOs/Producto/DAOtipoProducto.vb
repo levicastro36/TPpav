@@ -1,7 +1,7 @@
 ﻿Public Class DAOtipoProducto
     Public Function getProvincias() As DataTable
         Dim strSQL As String = "Select * from TipoProductos"
-        Return BDHelper.getDBHelper().ConsultaSQL(strSQL)
+        Return DBHelper.getDBHelper().ConsultaSQL(strSQL)
     End Function
     Public Function cargarTipo(oTipo As TipoProducto) As Boolean
         Dim rtn As Boolean = False
@@ -11,7 +11,7 @@
         sql += "'" + oTipo.nombre + "',"
         sql += "'" + oTipo.descripcion + "')"
 
-        If (BDHelper.getDBHelper.EjecutarSQL(sql) >= 1) Then
+        If (DBHelper.getDBHelper.EjecutarSQL(sql) >= 1) Then
             rtn = True
         End If
 

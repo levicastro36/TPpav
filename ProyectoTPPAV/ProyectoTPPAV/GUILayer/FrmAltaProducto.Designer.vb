@@ -55,6 +55,8 @@ Partial Class FrmAltaProducto
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnEditar = New System.Windows.Forms.Button()
+        Me.txt_StockEntrante = New System.Windows.Forms.TextBox()
+        Me.lbl_stockEntrante = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -71,6 +73,8 @@ Partial Class FrmAltaProducto
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txt_StockEntrante)
+        Me.GroupBox1.Controls.Add(Me.lbl_stockEntrante)
         Me.GroupBox1.Controls.Add(Me.btnTipoProducto)
         Me.GroupBox1.Controls.Add(Me.cmbTipoProducto)
         Me.GroupBox1.Controls.Add(Me.lblTipoProducto)
@@ -127,7 +131,7 @@ Partial Class FrmAltaProducto
         'lblTipoProducto
         '
         Me.lblTipoProducto.AutoSize = True
-        Me.lblTipoProducto.Location = New System.Drawing.Point(14, 80)
+        Me.lblTipoProducto.Location = New System.Drawing.Point(14, 83)
         Me.lblTipoProducto.Name = "lblTipoProducto"
         Me.lblTipoProducto.Size = New System.Drawing.Size(56, 13)
         Me.lblTipoProducto.TabIndex = 88
@@ -145,7 +149,7 @@ Partial Class FrmAltaProducto
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(14, 26)
+        Me.Label2.Location = New System.Drawing.Point(14, 21)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(43, 13)
         Me.Label2.TabIndex = 86
@@ -188,7 +192,7 @@ Partial Class FrmAltaProducto
         'lblModelo
         '
         Me.lblModelo.AutoSize = True
-        Me.lblModelo.Location = New System.Drawing.Point(14, 133)
+        Me.lblModelo.Location = New System.Drawing.Point(14, 138)
         Me.lblModelo.Name = "lblModelo"
         Me.lblModelo.Size = New System.Drawing.Size(42, 13)
         Me.lblModelo.TabIndex = 81
@@ -209,7 +213,7 @@ Partial Class FrmAltaProducto
         'lblMarca
         '
         Me.lblMarca.AutoSize = True
-        Me.lblMarca.Location = New System.Drawing.Point(14, 104)
+        Me.lblMarca.Location = New System.Drawing.Point(14, 110)
         Me.lblMarca.Name = "lblMarca"
         Me.lblMarca.Size = New System.Drawing.Size(40, 13)
         Me.lblMarca.TabIndex = 79
@@ -261,7 +265,7 @@ Partial Class FrmAltaProducto
         'lblPrecio
         '
         Me.lblPrecio.AutoSize = True
-        Me.lblPrecio.Location = New System.Drawing.Point(14, 193)
+        Me.lblPrecio.Location = New System.Drawing.Point(14, 195)
         Me.lblPrecio.Name = "lblPrecio"
         Me.lblPrecio.Size = New System.Drawing.Size(83, 13)
         Me.lblPrecio.TabIndex = 73
@@ -270,9 +274,10 @@ Partial Class FrmAltaProducto
         'txtDescripcion
         '
         Me.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtDescripcion.Location = New System.Drawing.Point(100, 230)
+        Me.txtDescripcion.Location = New System.Drawing.Point(100, 263)
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
+        Me.txtDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtDescripcion.Size = New System.Drawing.Size(229, 51)
         Me.txtDescripcion.TabIndex = 101
         Me.txtDescripcion.Tag = "1"
@@ -280,7 +285,7 @@ Partial Class FrmAltaProducto
         'lblDescripcion
         '
         Me.lblDescripcion.AutoSize = True
-        Me.lblDescripcion.Location = New System.Drawing.Point(14, 230)
+        Me.lblDescripcion.Location = New System.Drawing.Point(14, 263)
         Me.lblDescripcion.Name = "lblDescripcion"
         Me.lblDescripcion.Size = New System.Drawing.Size(63, 13)
         Me.lblDescripcion.TabIndex = 71
@@ -297,7 +302,7 @@ Partial Class FrmAltaProducto
         'lblCosto
         '
         Me.lblCosto.AutoSize = True
-        Me.lblCosto.Location = New System.Drawing.Point(14, 162)
+        Me.lblCosto.Location = New System.Drawing.Point(14, 167)
         Me.lblCosto.Name = "lblCosto"
         Me.lblCosto.Size = New System.Drawing.Size(34, 13)
         Me.lblCosto.TabIndex = 69
@@ -315,7 +320,7 @@ Partial Class FrmAltaProducto
         'lblNombre
         '
         Me.lblNombre.AutoSize = True
-        Me.lblNombre.Location = New System.Drawing.Point(14, 52)
+        Me.lblNombre.Location = New System.Drawing.Point(14, 47)
         Me.lblNombre.Name = "lblNombre"
         Me.lblNombre.Size = New System.Drawing.Size(47, 13)
         Me.lblNombre.TabIndex = 62
@@ -406,6 +411,23 @@ Partial Class FrmAltaProducto
         Me.btnEditar.Text = "Editar"
         Me.btnEditar.UseVisualStyleBackColor = False
         '
+        'txt_StockEntrante
+        '
+        Me.txt_StockEntrante.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_StockEntrante.Location = New System.Drawing.Point(255, 228)
+        Me.txt_StockEntrante.Name = "txt_StockEntrante"
+        Me.txt_StockEntrante.Size = New System.Drawing.Size(74, 20)
+        Me.txt_StockEntrante.TabIndex = 103
+        '
+        'lbl_stockEntrante
+        '
+        Me.lbl_stockEntrante.AutoSize = True
+        Me.lbl_stockEntrante.Location = New System.Drawing.Point(171, 230)
+        Me.lbl_stockEntrante.Name = "lbl_stockEntrante"
+        Me.lbl_stockEntrante.Size = New System.Drawing.Size(78, 13)
+        Me.lbl_stockEntrante.TabIndex = 102
+        Me.lbl_stockEntrante.Text = "Stock Entrante"
+        '
         'FrmAltaProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -460,4 +482,6 @@ Partial Class FrmAltaProducto
     Friend WithEvents lblTipoProducto As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents btnEditar As Button
+    Friend WithEvents txt_StockEntrante As TextBox
+    Friend WithEvents lbl_stockEntrante As Label
 End Class

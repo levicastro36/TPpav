@@ -2,7 +2,7 @@
 Public Class DAOmarca
     Public Function getMarcas() As DataTable
         Dim strSQL As String = "Select * from Marcas where Tipo = 2"
-        Return BDHelper.getDBHelper().ConsultaSQL(strSQL)
+        Return DBHelper.getDBHelper().ConsultaSQL(strSQL)
     End Function
 
     Public Function cargarMarcas(oMarcas As Marca) As Boolean
@@ -13,7 +13,7 @@ Public Class DAOmarca
         sql += "'" + oMarcas.descripcion + "',"
         sql += "'" + oMarcas.tipo + "')"
 
-        If (BDHelper.getDBHelper.EjecutarSQL(sql) >= 1) Then
+        If (DBHelper.getDBHelper.EjecutarSQL(sql) >= 1) Then
             rtn = True
         End If
 

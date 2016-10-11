@@ -123,7 +123,7 @@
     <Compile Include="DATALayer\DAOs\Producto\DAOmarca.vb" />
     <Compile Include="DATALayer\DAOs\Producto\DAOproducto.vb" />
     <Compile Include="DATALayer\DAOs\Producto\DAOtipoProducto.vb" />
-    <Compile Include="DATALayer\DBHelper\BDHelper.vb" />
+    <Compile Include="DATALayer\DBHelper\DBHelper.vb" />
     <Compile Include="GUILayer\FrmAltaModelo.Designer.vb">
       <DependentUpon>FrmAltaModelo.vb</DependentUpon>
     </Compile>
@@ -179,6 +179,12 @@
     <Compile Include="GUILayer\FrmAltaProducto.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUILayer\FrmGralProductos.Designer.vb">
+      <DependentUpon>FrmGralProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\FrmGralProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUILayer\FrmPrincipal.Designer.vb">
       <DependentUpon>FrmPrincipal.vb</DependentUpon>
     </Compile>
@@ -228,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\FrmAltaTipoProducto.resx">
       <DependentUpon>FrmAltaTipoProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\FrmGralProductos.resx">
+      <DependentUpon>FrmGralProductos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.vb</DependentUpon>

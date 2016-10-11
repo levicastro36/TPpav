@@ -2,7 +2,7 @@
 Public Class DAOprovincia
     Public Function getProvincias() As DataTable
         Dim strSQL As String = "Select * from Provincias"
-        Return BDHelper.getDBHelper().ConsultaSQL(strSQL)
+        Return DBHelper.getDBHelper().ConsultaSQL(strSQL)
     End Function
 
     Public Function cargarProvincia(oprovincia As Provincia) As Boolean
@@ -13,7 +13,7 @@ Public Class DAOprovincia
         sql += "'" + oprovincia.nombre + "',"
         sql += "'" + oprovincia.descripcion + "')"
 
-        If (BDHelper.getDBHelper.EjecutarSQL(sql) >= 1) Then
+        If (DBHelper.getDBHelper.EjecutarSQL(sql) >= 1) Then
             rtn = True
         End If
 

@@ -18,8 +18,8 @@
             Dim oMarca As New Marca
             oMarca.nombre = txtNombre.Text
             oMarca.nombre = txtDescripcion.Text
-            MsgBox(BDHelper.getDBHelper.deDondeViene)
-            oMarca.tipo = BDHelper.getDBHelper.deDondeViene.ToString
+            MsgBox(DBHelper.getDBHelper.deDondeViene)
+            oMarca.tipo = DBHelper.getDBHelper.deDondeViene.ToString
             If sMarca.nuevAmARCA(oMarca) Then
                 MsgBox("Carga Exitosa", MsgBoxStyle.Information)
                 txtNombre.Text = Nothing

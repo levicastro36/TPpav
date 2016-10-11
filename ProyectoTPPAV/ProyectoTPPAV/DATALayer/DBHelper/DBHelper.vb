@@ -1,13 +1,13 @@
 ﻿Imports System.Data.SqlClient
 'Imports System.Data.SQLite
 
-Public Class BDHelper
+Public Class DBHelper
     ' La clase BDHelper permite quitar del código del formulario todo lo relacionado con el acceso a bd.
     ' Permite ejecutar comandos sql y retornar resultados a la capa de datos.
     ' Implementa el patrón SINGLETON, que garantiza tener solo una instancia de esta clase.
 
     Private string_conexion As String
-    Private Shared instance As BDHelper 'Unica instancia de la clase
+    Private Shared instance As DBHelper 'Unica instancia de la clase
 
     Public deDondeViene As Integer
     Private Sub New()
@@ -23,9 +23,9 @@ Public Class BDHelper
         'string_conexion = "Data Source=basedato.db"
     End Sub
 
-    Public Shared Function getDBHelper() As BDHelper
+    Public Shared Function getDBHelper() As DBHelper
         If IsNothing(instance) Then
-            instance = New BDHelper()
+            instance = New DBHelper()
         End If
         Return instance
     End Function

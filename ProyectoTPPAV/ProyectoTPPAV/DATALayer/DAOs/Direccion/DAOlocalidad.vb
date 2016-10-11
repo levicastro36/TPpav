@@ -1,11 +1,11 @@
 ﻿Public Class DAOlocalidad
     Friend Function getLocalidades(codProvincia As String) As DataTable
         Dim strSQL As String = "Select * from Localidades WHERE codProvincia = " + codProvincia
-        Return BDHelper.getDBHelper().ConsultaSQL(strSQL)
+        Return DBHelper.getDBHelper().ConsultaSQL(strSQL)
     End Function
     Friend Function getBarriosSinParam() As DataTable
         Dim strSQL As String = "Select * from Localidades"
-        Return BDHelper.getDBHelper().ConsultaSQL(strSQL)
+        Return DBHelper.getDBHelper().ConsultaSQL(strSQL)
     End Function
 
     Public Function cargarLocalidades(olocalidad As Localidad) As Boolean
@@ -17,7 +17,7 @@
         sql += "'" + olocalidad.descripcion + "',"
         sql += "'" + olocalidad.codProvincia + "')"
 
-        If (BDHelper.getDBHelper.EjecutarSQL(sql) >= 1) Then
+        If (DBHelper.getDBHelper.EjecutarSQL(sql) >= 1) Then
             rtn = True
         End If
 

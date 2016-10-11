@@ -239,7 +239,7 @@
     End Sub
 
     Private Sub btnNuevoMarca_Click(sender As Object, e As EventArgs) Handles btnNuevoMarca.Click
-        BDHelper.getDBHelper.deDondeViene = 2
+        DBHelper.getDBHelper.deDondeViene = 2
         FrmAltaMarca.Show()
     End Sub
 
