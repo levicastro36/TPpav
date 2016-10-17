@@ -11,11 +11,4 @@
     Public Property stockEntrante As String
     Public Property descripcion As String
     Public Property codProveedor As String
-
-
-
-
-
-
-
 End Class
