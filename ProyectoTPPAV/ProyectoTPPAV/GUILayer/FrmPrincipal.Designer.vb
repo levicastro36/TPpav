@@ -23,6 +23,7 @@ Partial Class FrmPrincipal
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -30,7 +31,6 @@ Partial Class FrmPrincipal
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -47,6 +47,15 @@ Partial Class FrmPrincipal
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Altas"
+        '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(161, 92)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(75, 23)
+        Me.Button7.TabIndex = 3
+        Me.Button7.Text = "Cliente"
+        Me.Button7.UseVisualStyleBackColor = True
         '
         'Button3
         '
@@ -113,15 +122,6 @@ Partial Class FrmPrincipal
         Me.Button6.TabIndex = 3
         Me.Button6.Text = "Proveedor"
         Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(161, 92)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(75, 23)
-        Me.Button7.TabIndex = 3
-        Me.Button7.Text = "Cliente"
-        Me.Button7.UseVisualStyleBackColor = True
         '
         'FrmPrincipal
         '

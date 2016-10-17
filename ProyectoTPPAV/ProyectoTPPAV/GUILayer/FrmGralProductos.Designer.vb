@@ -28,17 +28,18 @@ Partial Class FrmGralProductos
         Me.btn_agregar = New System.Windows.Forms.Button()
         Me.dgv_gralProductos = New System.Windows.Forms.DataGridView()
         Me.btn_editar = New System.Windows.Forms.Button()
-        Me.id_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.desc_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codModelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codTipoProd = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_marca = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_tipoP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.stockActual = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.stockMin = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.costo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.stock_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.accion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgv_gralProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -83,7 +84,7 @@ Partial Class FrmGralProductos
         '
         Me.dgv_gralProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgv_gralProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_gralProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_prod, Me.nombre, Me.desc_prod, Me.codModelo, Me.codTipoProd, Me.stockActual, Me.stockMin, Me.precio, Me.costo, Me.id_proveedor, Me.stock_prod, Me.accion})
+        Me.dgv_gralProductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_producto, Me.nombre, Me.descripcion, Me.id_modelo, Me.id_marca, Me.id_tipoP, Me.stockActual, Me.stockMin, Me.precio, Me.costo, Me.id_proveedor, Me.stock, Me.accion})
         Me.dgv_gralProductos.Location = New System.Drawing.Point(12, 12)
         Me.dgv_gralProductos.Name = "dgv_gralProductos"
         Me.dgv_gralProductos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
@@ -100,11 +101,11 @@ Partial Class FrmGralProductos
         Me.btn_editar.Text = "Editar"
         Me.btn_editar.UseVisualStyleBackColor = True
         '
-        'id_prod
+        'id_producto
         '
-        Me.id_prod.FillWeight = 62.60324!
-        Me.id_prod.HeaderText = "Codigo Prodcuto"
-        Me.id_prod.Name = "id_prod"
+        Me.id_producto.FillWeight = 62.60324!
+        Me.id_producto.HeaderText = "Codigo Prodcuto"
+        Me.id_producto.Name = "id_producto"
         '
         'nombre
         '
@@ -112,23 +113,29 @@ Partial Class FrmGralProductos
         Me.nombre.HeaderText = "Nombre"
         Me.nombre.Name = "nombre"
         '
-        'desc_prod
+        'descripcion
         '
-        Me.desc_prod.FillWeight = 293.5619!
-        Me.desc_prod.HeaderText = "Descripcion"
-        Me.desc_prod.Name = "desc_prod"
+        Me.descripcion.FillWeight = 293.5619!
+        Me.descripcion.HeaderText = "Descripcion"
+        Me.descripcion.Name = "descripcion"
         '
-        'codModelo
+        'id_modelo
         '
-        Me.codModelo.HeaderText = "codModelo"
-        Me.codModelo.Name = "codModelo"
-        Me.codModelo.Visible = False
+        Me.id_modelo.HeaderText = "codModelo"
+        Me.id_modelo.Name = "id_modelo"
+        Me.id_modelo.Visible = False
         '
-        'codTipoProd
+        'id_marca
         '
-        Me.codTipoProd.HeaderText = "codTipoProd"
-        Me.codTipoProd.Name = "codTipoProd"
-        Me.codTipoProd.Visible = False
+        Me.id_marca.HeaderText = "id_marca"
+        Me.id_marca.Name = "id_marca"
+        Me.id_marca.Visible = False
+        '
+        'id_tipoP
+        '
+        Me.id_tipoP.HeaderText = "codTipoProd"
+        Me.id_tipoP.Name = "id_tipoP"
+        Me.id_tipoP.Visible = False
         '
         'stockActual
         '
@@ -160,11 +167,11 @@ Partial Class FrmGralProductos
         Me.id_proveedor.Name = "id_proveedor"
         Me.id_proveedor.Visible = False
         '
-        'stock_prod
+        'stock
         '
-        Me.stock_prod.FillWeight = 54.7672!
-        Me.stock_prod.HeaderText = "Stock Ingresante"
-        Me.stock_prod.Name = "stock_prod"
+        Me.stock.FillWeight = 54.7672!
+        Me.stock.HeaderText = "Stock Ingresante"
+        Me.stock.Name = "stock"
         '
         'accion
         '
@@ -196,16 +203,17 @@ Partial Class FrmGralProductos
     Friend WithEvents btn_agregar As Button
     Friend WithEvents dgv_gralProductos As DataGridView
     Friend WithEvents btn_editar As Button
-    Friend WithEvents id_prod As DataGridViewTextBoxColumn
+    Friend WithEvents id_producto As DataGridViewTextBoxColumn
     Friend WithEvents nombre As DataGridViewTextBoxColumn
-    Friend WithEvents desc_prod As DataGridViewTextBoxColumn
-    Friend WithEvents codModelo As DataGridViewTextBoxColumn
-    Friend WithEvents codTipoProd As DataGridViewTextBoxColumn
+    Friend WithEvents descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents id_modelo As DataGridViewTextBoxColumn
+    Friend WithEvents id_marca As DataGridViewTextBoxColumn
+    Friend WithEvents id_tipoP As DataGridViewTextBoxColumn
     Friend WithEvents stockActual As DataGridViewTextBoxColumn
     Friend WithEvents stockMin As DataGridViewTextBoxColumn
     Friend WithEvents precio As DataGridViewTextBoxColumn
     Friend WithEvents costo As DataGridViewTextBoxColumn
     Friend WithEvents id_proveedor As DataGridViewTextBoxColumn
-    Friend WithEvents stock_prod As DataGridViewTextBoxColumn
+    Friend WithEvents stock As DataGridViewTextBoxColumn
     Friend WithEvents accion As DataGridViewTextBoxColumn
 End Class

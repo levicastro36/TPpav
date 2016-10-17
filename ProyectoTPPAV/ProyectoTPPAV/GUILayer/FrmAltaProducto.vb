@@ -6,7 +6,7 @@
     Private STipoProd As New ServicioTipoProducto
     Private Sproveedor As New ServicioProveedor
     Dim banderaEditar As Boolean = False
-    Shared transaccion As Boolean = True
+    Shared transaccion As Boolean = False
 
     Private Sub FrmAltaProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetearCombos()
@@ -19,8 +19,9 @@
         txtStockMin.Text = String.Empty
         txt_StockEntrante.Text = String.Empty
     End Sub
-    Shared Sub frmTransaccion()
+    Friend Sub frmTransaccion()
         transaccion = True
+        Me.ShowDialog()
     End Sub
     Public Sub SetearCombos()
         Me.cmbMarca.DataSource = Nothing
