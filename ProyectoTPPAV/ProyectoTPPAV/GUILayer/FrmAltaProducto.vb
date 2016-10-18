@@ -7,6 +7,7 @@
     Private Sproveedor As New ServicioProveedor
     Dim banderaEditar As Boolean = False
     Shared transaccion As Boolean = False
+    Private primero As Boolean = False
 
     Private Sub FrmAltaProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetearCombos()
@@ -180,16 +181,15 @@
             oproducto.codProducto = txtCodigo.Text
             oproducto.nombre = txtNombre.Text
             oproducto.descripcion = txtDescripcion.Text
-            oproducto.corMarca = cmbMarca.SelectedValue.ToString
-            oproducto.codModelo = cmbModelo.SelectedValue.ToString
             oproducto.codTipoProd = cmbTipoProducto.SelectedValue.ToString
+            oproducto.codMarca = cmbMarca.SelectedValue.ToString
+            oproducto.codModelo = cmbModelo.SelectedValue.ToString
+            oproducto.codProveedor = cmbProveedor.SelectedValue.ToString
             oproducto.costo = txtCosto.Text
             oproducto.precio = txtPrecioVenta.Text
             oproducto.stockActual = txtStockActual.Text
             oproducto.stockMin = txtStockMin.Text
             oproducto.stockEntrante = txt_StockEntrante.Text
-            oproducto.codProveedor = cmbProveedor.SelectedValue.ToString
-            oproducto.stockMin = txtStockMin.Text
 
             If Not transaccion Then
                 If (banderaEditar = True) Then ' chequea que la ventana este en modo editar
@@ -224,7 +224,7 @@
                 Me.Close()
             End If
 
-            End If
+        End If
     End Sub
 
     Private Function ValidarVacio() As Boolean
@@ -239,7 +239,7 @@
                     If TypeOf cn1 Is TextBox Then
 
 
-                        If (cn1.Text = "" Or cn1.Text = String.Empty) And cn1.Tag=1 Then
+                        If (cn1.Text = "" Or cn1.Text = String.Empty) And cn1.Tag = 1 Then
                             vacio = True
                         End If
 
@@ -281,4 +281,16 @@
     Private Sub btnNuevoProvedor_Click(sender As Object, e As EventArgs) Handles btnNuevoProvedor.Click
         FrmAltaProveedor.Show()
     End Sub
+
+    Private Sub FrmAltaProducto_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
+        If Not primero Then
+            If e.KeyCode = Keys.Enter Then
+                btnBuscar.PerformClick()
+                primero = True
+            End If
+        Else
+            primero = False
+        End If
+    End Sub
 End Class
+
