@@ -19,8 +19,18 @@
 
     End Sub
 
-    Friend Sub consultarProveedor()
+    Friend Sub loadAltaProveedor()
         Me.ShowDialog()
+    End Sub
+
+    Private Sub setAlta()
+        txtCalle.Text = String.Empty
+        txtCUIT.Text = String.Empty
+        txtNro.Text = String.Empty
+        txtPiso.Text = String.Empty
+        txtRazonSocial.Text = String.Empty
+        txtResponsable.Text = String.Empty
+        txtTelefono.Text = String.Empty
     End Sub
 
     Private Sub CargarCombo(ByRef combo As ComboBox, ByRef datos As Data.DataTable, ByVal pk As String, ByVal nombre As String)
